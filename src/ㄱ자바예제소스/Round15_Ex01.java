@@ -1,4 +1,5 @@
-class A1 implements Runnable {
+package ㄱ자바예제소스;
+class A123 implements Runnable {
 	public void run() {
 		System.out.println("\nHere is MyThread!!");
 		for(int i = 0; i < 100; i++) {
@@ -11,7 +12,7 @@ class A1 implements Runnable {
 public class Round15_Ex01 {
 	public static void main(String[] args) {
 		System.out.println("Main Thread!!!");
-		A1 mt = new A1();
+		A123 mt = new A123();
 		Thread myth = new Thread(mt);
 		myth.start();
 		for(int i = 1; i < 1000; i++) {

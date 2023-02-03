@@ -1,3 +1,4 @@
+package ㄱ자바예제소스;
 import java.io.*;
 
 public class Round11_Ex02 {

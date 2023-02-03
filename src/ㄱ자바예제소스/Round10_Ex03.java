@@ -1,3 +1,4 @@
+package ㄱ자바예제소스;
 class Round10_Ex03_Other {
 	protected int x = 10;
 }

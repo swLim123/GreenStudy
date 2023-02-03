@@ -1,3 +1,4 @@
+package ã„±ìë°”ì˜ˆì œì†ŒìŠ¤;
 import java.io.*;
 
 public class Round07_Ex05 {
@@ -9,7 +10,7 @@ public class Round07_Ex05 {
 	}
 
 	public static void main(String[] ar) throws IOException {
-		int kor = getInt("±¹¾î");
-		System.out.println("±¹¾î Á¡¼ö´Â " + kor + "ÀÔ´Ï´Ù.");
+		int kor = getInt("êµ­ì–´");
+		System.out.println("êµ­ì–´ ì ìˆ˜ëŠ” " + kor + "ì…ë‹ˆë‹¤.");
 	}
 }

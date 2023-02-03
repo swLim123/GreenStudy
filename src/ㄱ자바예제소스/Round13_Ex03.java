@@ -1,3 +1,4 @@
+package ã„±ìë°”ì˜ˆì œì†ŒìŠ¤;
 class UpperClass {
 	int x;
 
@@ -9,12 +10,12 @@ class UpperClass {
 	}
 
 	public UpperClass(int x) {
-		this(); // ÀÚ½ÅÀÇ Å¬·¡½º public UpperClass() »ı¼ºÀÚ È£Ãâ
+		this(); // ìì‹ ì˜ í´ë˜ìŠ¤ public UpperClass() ìƒì„±ì í˜¸ì¶œ
 		this.x = x;
 	}
 
 	public UpperClass(int x, int y) {
-		this(x); // ÀÚ½ÅÀÇ Å¬·¡½º public UpperClass(int x) »ı¼ºÀÚ È£Ãâ
+		this(x); // ìì‹ ì˜ í´ë˜ìŠ¤ public UpperClass(int x) ìƒì„±ì í˜¸ì¶œ
 		this.y = y;
 	}
 }
@@ -23,28 +24,33 @@ class LowerClass extends UpperClass {
 	int r;
 
 	public LowerClass() {
-		super(); // »óÀ§ Å¬·¡½ºÀÇ public UpperClass() »ı¼ºÀÚ È£Ãâ. »ı·« °¡´É.
+		super(); // ìƒìœ„ í´ë˜ìŠ¤ì˜ public UpperClass() ìƒì„±ì í˜¸ì¶œ. ìƒëµ ê°€ëŠ¥.
 		r = 30;
 	}
 
 	public LowerClass(int x) {
-		super(x); // »óÀ§ Å¬·¡½ºÀÇ public UpperClass(int x) »ı¼ºÀÚ È£Ãâ
+		super(x); // ìƒìœ„ í´ë˜ìŠ¤ì˜ public UpperClass(int x) ìƒì„±ì í˜¸ì¶œ
 		r = 30;
 	}
 
 	public LowerClass(int x, int y) {
-		super(x, y); // »óÀ§ Å¬·¡½ºÀÇ public UpperClass(int x, int y) »ı¼ºÀÚ È£Ãâ
+		super(x, y); // ìƒìœ„ í´ë˜ìŠ¤ì˜ public UpperClass(int x, int y) ìƒì„±ì í˜¸ì¶œ
 		r = 30;
 	}
 
 	public LowerClass(int x, int y, int r) {
-		this(x, y); // ÀÚ½ÅÀÇ Å¬·¡½º public LowerClass(int x, int y) »ı¼ºÀÚ È£Ãâ
+		this(x, y); // ìì‹ ì˜ í´ë˜ìŠ¤ public LowerClass(int x, int y) ìƒì„±ì í˜¸ì¶œ
 		this.r = r;
 	}
 }
 
 public class Round13_Ex03 {
 	public static void main(String[] ar) {
-		// ÇÊ¿äÇÑ °´Ã¼ »ı¼º °¡´É.
+		// í•„ìš”í•œ ê°ì²´ ìƒì„± ê°€ëŠ¥.
+		LowerClass lc = new LowerClass(111, 222, 333);
+		System.out.println("lc.x = " + lc.x);
+		System.out.println("lc.y = " + lc.y);
+		System.out.println("lc.r = " + lc.r);
 	}
 }
+

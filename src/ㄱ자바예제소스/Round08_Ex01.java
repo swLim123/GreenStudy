@@ -1,3 +1,4 @@
+package ㄱ자바예제소스;
 public class Round08_Ex01 {
 	public static void main(String[] ar) {
 		System.out.println("ar[0] = " + ar[0]);

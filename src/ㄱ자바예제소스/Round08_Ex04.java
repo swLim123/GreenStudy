@@ -1,10 +1,11 @@
+package ã„±ìë°”ì˜ˆì œì†ŒìŠ¤;
 import java.io.*;
 
 public class Round08_Ex04 {
 	public static void main(String[] ar) throws IOException {
 		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
-		String[] subname = { "±¹¾î", "¿µ¾î", "¼öÇĞ" };
-		int[] sub = new int[subname.length + 1]; // 0:±¹¾î 1:¿µ¾î 2:¼öÇĞ 3:ÃÑÇÕ
+		String[] subname = { "êµ­ì–´", "ì˜ì–´", "ìˆ˜í•™" };
+		int[] sub = new int[subname.length + 1]; // 0:êµ­ì–´ 1:ì˜ì–´ 2:ìˆ˜í•™ 3:ì´í•©
 		float avg = 0.0f;
 
 		for (int i = 0; i < sub.length - 1; i++) {
@@ -18,7 +19,7 @@ public class Round08_Ex04 {
 		avg = sub[sub.length - 1] / (float) (sub.length - 1);
 
 		System.out.println();
-		System.out.println("ÃÑÁ¡ = " + sub[sub.length - 1]);
-		System.out.println("Æò±Õ = " + avg);
+		System.out.println("ì´ì  = " + sub[sub.length - 1]);
+		System.out.println("í‰ê·  = " + avg);
 	}
 }

@@ -1,3 +1,4 @@
+package ㄱ자바예제소스;
 import java.io.*;
 
 public class Round10_Ex10 {
@@ -41,7 +42,7 @@ public class Round10_Ex10 {
 
 	public void display() {
 		System.out.println();
-		System.out.print("���� ��ǥ (x, y) = ");
+		System.out.print("점의 좌표 (x, y) = ");
 		System.out.println("(" + x + ", " + y + ")");
 		System.out.println();
 	}

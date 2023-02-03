@@ -1,11 +1,12 @@
+package ã„±ìë°”ì˜ˆì œì†ŒìŠ¤;
 import java.io.*;
 
 public class Round08_Ex06 {
 	public static void main(String[] ar) throws IOException {
 		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
-		String[] subname = { "±¹¾î", "¿µ¾î", "¼öÇĞ" };
+		String[] subname = { "êµ­ì–´", "ì˜ì–´", "ìˆ˜í•™" };
 		int[][] sub = new int[3][subname.length + 1];
-		// 0:Ã¹¹øÂ° »ç¶÷ 1:µÎ ¹øÂ° »ç¶÷ 2:¼¼ ¹øÂ° »ç¶÷
+		// 0:ì²«ë²ˆì§¸ ì‚¬ëŒ 1:ë‘ ë²ˆì§¸ ì‚¬ëŒ 2:ì„¸ ë²ˆì§¸ ì‚¬ëŒ
 		float[] avg = new float[3];
 
 		for (int k = 0; k < sub.length; k++) {
@@ -21,8 +22,8 @@ public class Round08_Ex06 {
 
 		for (int k = 0; k < sub.length; k++) {
 			System.out.println();
-			System.out.println("ÃÑÁ¡ = " + sub[k][sub[k].length - 1]);
-			System.out.println("Æò±Õ = " + avg[k]);
+			System.out.println("ì´ì  = " + sub[k][sub[k].length - 1]);
+			System.out.println("í‰ê·  = " + avg[k]);
 		}
 	}
 }

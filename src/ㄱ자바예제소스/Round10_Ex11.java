@@ -1,19 +1,20 @@
+package ã„±ìë°”ì˜ˆì œì†ŒìŠ¤;
 import java.io.*;
 
 public class Round10_Ex11 {
 	public static void main(String[] ar) throws IOException {
-		System.out.println("ÁÂÇ¥ °ª Ã³¸®");
+		System.out.println("ì¢Œí‘œ ê°’ ì²˜ë¦¬");
 		Round10_Ex10 rd = new Round10_Ex10();
-		// °ª ÀÔ·Â ¹Ş±â
+		// ê°’ ì…ë ¥ ë°›ê¸°
 		rd.setX();
 		rd.setY();
-		// °á°ú ÁÂÇ¥ º¸±â
+		// ê²°ê³¼ ì¢Œí‘œ ë³´ê¸°
 		rd.display();
-		// ÁÂÇ¥¸¦ ´Ù¸¥ °÷À¸·Î ¿Å±â±â
-		System.out.println("ÁÂÇ¥¸¦ 50, 100À¸·Î ÀÌµ¿ÇÕ´Ï´Ù.");
+		// ì¢Œí‘œë¥¼ ë‹¤ë¥¸ ê³³ìœ¼ë¡œ ì˜®ê¸°ê¸°
+		System.out.println("ì¢Œí‘œë¥¼ 50, 100ìœ¼ë¡œ ì´ë™í•©ë‹ˆë‹¤.");
 		rd.setX(50);
 		rd.setY(100);
-		// ´Ù½Ã ÇÑ¹ø °á°ú ÁÂÇ¥ º¸±â
+		// ë‹¤ì‹œ í•œë²ˆ ê²°ê³¼ ì¢Œí‘œ ë³´ê¸°
 		rd.display();
 	}
 }

@@ -1,22 +1,23 @@
-interface A2 {
+package ã„±ìë°”ì˜ˆì œì†ŒìŠ¤;
+interface A222 {
 	void aaa();
 
 	public abstract void bbb();
 }
 
-class B2 implements A2 {
-	public void aaa() { // Compile Error ? public À» ºÙ¿© ÁÖ¾î¾ß ÇÔ.
-		System.out.println("aaa ¸Ş¼­µå");
+class B222 implements A222 {
+	public void aaa() { // Compile Error ? public ì„ ë¶™ì—¬ ì£¼ì–´ì•¼ í•¨.
+		System.out.println("aaa ë©”ì„œë“œ");
 	}
 
 	public void bbb() {
-		System.out.println("bbb ¸Ş¼­µå");
+		System.out.println("bbb ë©”ì„œë“œ");
 	}
 }
 
 public class Round14_Ex02 {
 	public static void main(String[] ar) {
-		B2 bp = new B2();
+		B222 bp = new B222();
 		bp.aaa();
 		bp.bbb();
 	}

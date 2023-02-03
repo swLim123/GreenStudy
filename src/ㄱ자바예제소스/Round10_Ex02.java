@@ -1,3 +1,4 @@
+package ㄱ자바예제소스;
 class Round10_Ex02_Other {
 	private int x = 10;
 }
@@ -7,4 +8,10 @@ public class Round10_Ex02 {
 		Round10_Ex02_Other rd = new Round10_Ex02_Other();
 		//System.out.println("x = " + rd.x);
 	}
+}
+
+class Test
+{
+	public int a = 100;
+	private int b = 100;
 }

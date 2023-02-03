@@ -1,3 +1,4 @@
+package ㄱ자바예제소스;
 public class Round10_Ex01 {
 	private int x = 10;
 

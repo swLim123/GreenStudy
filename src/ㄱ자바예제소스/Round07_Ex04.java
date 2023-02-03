@@ -1,3 +1,4 @@
+package ã„±ìë°”ì˜ˆì œì†ŒìŠ¤;
 import java.io.*;
 
 public class Round07_Ex04 {
@@ -9,7 +10,7 @@ public class Round07_Ex04 {
 	}
 
 	public static void main(String[] ar) throws IOException {
-		String name = getString("ÀÌ¸§");
-		System.out.println(name + "´Ô! ¾È³çÇÏ¼¼¿ä!!");
+		String name = getString("ì´ë¦„");
+		System.out.println(name + "ë‹˜! ì•ˆë…•í•˜ì„¸ìš”!!");
 	}
 }

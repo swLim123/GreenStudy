@@ -1,11 +1,12 @@
+package ã„±ìë°”ì˜ˆì œì†ŒìŠ¤;
 import java.io.*;
 
 public class Round08_Ex08 {
 	public static void main(String[] ar) throws IOException {
 		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
-		String[] subname = { "±¹¾î", "¿µ¾î", "¼öÇĞ" };
+		String[] subname = { "êµ­ì–´", "ì˜ì–´", "ìˆ˜í•™" };
 		int[][][] sub = new int[2][3][subname.length + 3];
-		// 0:±¹¾î 1:¿µ¾î 2:¼öÇĞ 3:ÃÑÇÕ 4:¼®Â÷
+		// 0:êµ­ì–´ 1:ì˜ì–´ 2:ìˆ˜í•™ 3:ì´í•© 4:ì„ì°¨
 		float[][] avg = new float[2][3];
 
 		for (int h = 0; h < sub.length; h++) {
@@ -24,7 +25,7 @@ public class Round08_Ex08 {
 			}
 		}
 
-		// ¹İ¼®Â÷ ±¸ÇÏ´Â ¹æ½Ä
+		// ë°˜ì„ì°¨ êµ¬í•˜ëŠ” ë°©ì‹
 		for (int h = 0; h < sub.length; h++) {
 			for (int k = 0; k < sub[h].length; k++) {
 				for (int i = 0; i < sub[h].length; i++) {
@@ -35,7 +36,7 @@ public class Round08_Ex08 {
 			}
 		}
 
-		// Àü±³¼®Â÷ ±¸ÇÏ´Â ¹æ½Ä
+		// ì „êµì„ì°¨ êµ¬í•˜ëŠ” ë°©ì‹
 		for (int h = 0; h < sub.length; h++) {
 			for (int k = 0; k < sub[h].length; k++) {
 				for (int i = 0; i < sub.length; i++) {
@@ -51,12 +52,12 @@ public class Round08_Ex08 {
 		for (int h = 0; h < sub.length; h++) {
 			for (int k = 0; k < sub[h].length; k++) {
 				System.out.println();
-				System.out.println("ÃÑÁ¡ = " + sub[h][k][sub[h][k].length - 3]);
-				System.out.println("Æò±Õ = " + avg[h][k]);
-				System.out.println("¼®Â÷ = " + sub[h][k][sub[h][k].length - 2]
-						+ "µî");
-				System.out.println("Àü±³¼®Â÷ = " + sub[h][k][sub[h][k].length - 1]
-						+ "µî");
+				System.out.println("ì´ì  = " + sub[h][k][sub[h][k].length - 3]);
+				System.out.println("í‰ê·  = " + avg[h][k]);
+				System.out.println("ì„ì°¨ = " + sub[h][k][sub[h][k].length - 2]
+						+ "ë“±");
+				System.out.println("ì „êµì„ì°¨ = " + sub[h][k][sub[h][k].length - 1]
+						+ "ë“±");
 			}
 		}
 	}
