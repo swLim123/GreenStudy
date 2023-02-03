@@ -1,9 +1,10 @@
+package ã„±ìë°”ì˜ˆì œì†ŒìŠ¤;
 public class Round07_Ex01 {
 	public static void X() {
 		for (int a = 0; a < 5; a++) {
 			System.out.print("*");
 		}
-		return; // °á°úÇü return °ªÀÌ void ÀÏ °æ¿ì return ¹®±¸ »ı·« °¡´É
+		return; // ê²°ê³¼í˜• return ê°’ì´ void ì¼ ê²½ìš° return ë¬¸êµ¬ ìƒëµ ê°€ëŠ¥
 	}
 
 	public static void main(String[] ar) {
@@ -14,6 +15,6 @@ public class Round07_Ex01 {
 		X();
 		System.out.println("\n!!!");
 		X();
-		return; // main¿¡µµ ¿ø·¡´Â ÀÌ ±¸¹®ÀÌ ÀÖ¾î¾ß ÇÏÁö¸¸ »ı·« µÊ
+		return; // mainì—ë„ ì›ë˜ëŠ” ì´ êµ¬ë¬¸ì´ ìˆì–´ì•¼ í•˜ì§€ë§Œ ìƒëµ ë¨
 	}
 }

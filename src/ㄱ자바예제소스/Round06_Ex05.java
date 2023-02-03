@@ -1,3 +1,4 @@
+package ã„±ìë°”ì˜ˆì œì†ŒìŠ¤;
 import java.io.*;
 
 public class Round06_Ex05 {
@@ -5,9 +6,9 @@ public class Round06_Ex05 {
 		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
 		int su1 = 0, su2 = 0, tot = 0;
 
-		System.out.print("Ã¹¹øÂ° ¼ö = ");
+		System.out.print("ì²«ë²ˆì§¸ ìˆ˜ = ");
 		su1 = Integer.parseInt(in.readLine());
-		System.out.print("µÎ¹øÂ° ¼ö = ");
+		System.out.print("ë‘ë²ˆì§¸ ìˆ˜ = ");
 		su2 = Integer.parseInt(in.readLine());
 
 		if (su1 > su2) {
@@ -21,7 +22,7 @@ public class Round06_Ex05 {
 		}
 
 		System.out.println();
-		System.out.print(su1 + "¿¡¼­ " + su2 + "»çÀÌÀÇ ÇÕÀº ");
-		System.out.println(tot + "ÀÔ´Ï´Ù.");
+		System.out.print(su1 + "ì—ì„œ " + su2 + "ì‚¬ì´ì˜ í•©ì€ ");
+		System.out.println(tot + "ì…ë‹ˆë‹¤.");
 	}
 }

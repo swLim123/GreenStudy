@@ -1,3 +1,4 @@
+package ã„±ìë°”ì˜ˆì œì†ŒìŠ¤;
 import java.io.*;
 
 public class Round06_Ex04 {
@@ -6,13 +7,13 @@ public class Round06_Ex04 {
 		int su1 = 0, su2 = 0, tot = 0;
 		char yon = 0;
 
-		System.out.print("Ã¹¹øÂ° ¼ö = ");
+		System.out.print("ì²«ë²ˆì§¸ ìˆ˜ = ");
 		su1 = Integer.parseInt(in.readLine());
-		System.out.print("¿¬»êÀÚ(+, -, *, /, %) = ");
+		System.out.print("ì—°ì‚°ì(+, -, *, /, %) = ");
 		yon = (char) System.in.read();
 		System.in.read();
 		System.in.read();
-		System.out.print("µÎ¹øÂ° ¼ö = ");
+		System.out.print("ë‘ë²ˆì§¸ ìˆ˜ = ");
 		su2 = Integer.parseInt(in.readLine());
 
 		switch (yon) {
@@ -32,7 +33,7 @@ public class Round06_Ex04 {
 			tot = su1 % su2;
 			break;
 		default:
-			System.out.println("Àß¸øµÈ ¿¬»êÀÚ ÀÔ·Â");
+			System.out.println("ì˜ëª»ëœ ì—°ì‚°ì ì…ë ¥");
 			System.exit(-1);
 		}
 

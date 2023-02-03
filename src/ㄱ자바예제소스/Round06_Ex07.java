@@ -1,51 +1,52 @@
+package ã„±ìë°”ì˜ˆì œì†ŒìŠ¤;
 import java.io.*;
 
 public class Round06_Ex07 {
 	public static void main(String[] ar) throws IOException {
 		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
-		int ±¹¾î = 0, ¿µ¾î = 0, ¼öÇĞ = 0, ÃÑÁ¡ = 0;
-		char ÇĞÁ¡ = 0;
-		float Æò±Õ = 0.0f;
+		int êµ­ì–´ = 0, ì˜ì–´ = 0, ìˆ˜í•™ = 0, ì´ì  = 0;
+		char í•™ì  = 0;
+		float í‰ê·  = 0.0f;
 
 		do {
-			System.out.print("±¹¾î = ");
-			±¹¾î = Integer.parseInt(in.readLine());
-		} while (±¹¾î < 0 || ±¹¾î > 100);
+			System.out.print("êµ­ì–´ = ");
+			êµ­ì–´ = Integer.parseInt(in.readLine());
+		} while (êµ­ì–´ < 0 || êµ­ì–´ > 100);
 
 		do {
-			System.out.print("¿µ¾î = ");
-			¿µ¾î = Integer.parseInt(in.readLine());
-		} while (¿µ¾î < 0 || ¿µ¾î > 100);
+			System.out.print("ì˜ì–´ = ");
+			ì˜ì–´ = Integer.parseInt(in.readLine());
+		} while (ì˜ì–´ < 0 || ì˜ì–´ > 100);
 
 		do {
-			System.out.print("¼öÇĞ = ");
-			¼öÇĞ = Integer.parseInt(in.readLine());
-		} while (¼öÇĞ < 0 || ¼öÇĞ > 100);
+			System.out.print("ìˆ˜í•™ = ");
+			ìˆ˜í•™ = Integer.parseInt(in.readLine());
+		} while (ìˆ˜í•™ < 0 || ìˆ˜í•™ > 100);
 
-		ÃÑÁ¡ = ±¹¾î + ¿µ¾î + ¼öÇĞ;
-		Æò±Õ = ÃÑÁ¡ / 3.0f;
+		ì´ì  = êµ­ì–´ + ì˜ì–´ + ìˆ˜í•™;
+		í‰ê·  = ì´ì  / 3.0f;
 
-		switch ((int) (Æò±Õ / 10)) {
+		switch ((int) (í‰ê·  / 10)) {
 		case 10:
 		case 9:
-			ÇĞÁ¡ = 'A';
+			í•™ì  = 'A';
 			break;
 		case 8:
-			ÇĞÁ¡ = 'B';
+			í•™ì  = 'B';
 			break;
 		case 7:
-			ÇĞÁ¡ = 'C';
+			í•™ì  = 'C';
 			break;
 		case 6:
-			ÇĞÁ¡ = 'D';
+			í•™ì  = 'D';
 			break;
 		default:
-			ÇĞÁ¡ = 'F';
+			í•™ì  = 'F';
 		}
 
 		System.out.println();
-		System.out.println("ÃÑÁ¡ = " + ÃÑÁ¡);
-		System.out.printf("Æò±Õ = %.2f\n", Æò±Õ);
-		System.out.println("ÇĞÁ¡ = " + ÇĞÁ¡ + "ÇĞÁ¡");
+		System.out.println("ì´ì  = " + ì´ì );
+		System.out.printf("í‰ê·  = %.2f\n", í‰ê· );
+		System.out.println("í•™ì  = " + í•™ì  + "í•™ì ");
 	}
 }

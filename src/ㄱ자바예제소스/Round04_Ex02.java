@@ -1,3 +1,4 @@
+package ㄱ자바예제소스;
 public class Round04_Ex02 {
 	public static void main(String[] ar) {
 		byte by = 12;

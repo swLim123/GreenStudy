@@ -1,8 +1,9 @@
-	import java.io.*;
+package Ц└╠Л·░К╟■Л≤┬Л═°Л├▄Л┼╓;
+import java.io.*;
 	public class Round04_Ex06{
 		public static void main(String[] ar) throws java.io.IOException{
-			System.out.print("ют╥б = "); // println ╬ф╢т.
+			System.out.print("О©╫т╥О©╫ = "); // println О©╫ф╢О©╫.
 			int aa = System.in.read();
-			System.out.println("ют╥б╣х ╬ф╫╨е╟ ╟╙ю╨ " + aa + "ют╢о╢ы.");
+			System.out.println("О©╫т╥б╣О©╫ О©╫ф╫О©╫е╟ О©╫О©╫О©╫О©╫ " + aa + "О©╫т╢о╢О©╫.");
 		}
 	}

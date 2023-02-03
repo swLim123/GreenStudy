@@ -1,3 +1,4 @@
+package ㄱ자바예제소스;
 public class Round05_Ex05 {
 	public static boolean aaa() {
 		System.out.println("AAA");

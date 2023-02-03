@@ -1,3 +1,4 @@
+package ã„±ìë°”ì˜ˆì œì†ŒìŠ¤;
 import java.io.*;
 
 public class Round06_Ex01 {
@@ -5,20 +6,20 @@ public class Round06_Ex01 {
 		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
 		int firstsu = 0, secondsu = 0;
 
-		System.out.print("Ã¹¹øÂ° ¼ö = ");
+		System.out.print("ì²«ë²ˆì§¸ ìˆ˜ = ");
 		firstsu = Integer.parseInt(in.readLine());
 
-		System.out.print("µÎ¹øÂ° ¼ö = ");
+		System.out.print("ë‘ë²ˆì§¸ ìˆ˜ = ");
 		secondsu = Integer.parseInt(in.readLine());
 
 		if (firstsu > secondsu) {
-			System.out.print("Ã¹¹øÂ° ¼ö(" + firstsu + ")");
-			System.out.print("°¡ µÎ¹øÂ° ¼ö(" + secondsu + ")");
-			System.out.println("º¸´Ù Å« ¼ö ÀÔ´Ï´Ù.");
+			System.out.print("ì²«ë²ˆì§¸ ìˆ˜(" + firstsu + ")");
+			System.out.print("ê°€ ë‘ë²ˆì§¸ ìˆ˜(" + secondsu + ")");
+			System.out.println("ë³´ë‹¤ í° ìˆ˜ ì…ë‹ˆë‹¤.");
 		} else {
-			System.out.print("Ã¹¹øÂ° ¼ö(" + firstsu + ")");
-			System.out.print("°¡ µÎ¹øÂ° ¼ö(" + secondsu + ")");
-			System.out.println("º¸´Ù ÀÛÀº ¼ö ÀÔ´Ï´Ù.");
+			System.out.print("ì²«ë²ˆì§¸ ìˆ˜(" + firstsu + ")");
+			System.out.print("ê°€ ë‘ë²ˆì§¸ ìˆ˜(" + secondsu + ")");
+			System.out.println("ë³´ë‹¤ ì‘ì€ ìˆ˜ ì…ë‹ˆë‹¤.");
 		}
 	}
 }

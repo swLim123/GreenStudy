@@ -1,11 +1,12 @@
+package ã„±ìë°”ì˜ˆì œì†ŒìŠ¤;
 import java.io.*;
 
 public class Round06_Ex03 {
 	public static void main(String[] ar) throws IOException {
-		System.out.print("ÁÖ¹Î¹øÈ£ 7¹øÂ° ÀÚ¸®¸¦ ÀÔ·ÂÇÏ¼¼¿ä : ");
-		int x = System.in.read() - 48; // 7¹øÂ° ÀÚ¸® ¼ö ÀÔ·Â
-		int year = 0; // ¿¬´ë¸¦ ÀúÀåÇÒ Field
-		String sex = ""; // ¼ºº°À» ÀúÀåÇÒ Field
+		System.out.print("ì£¼ë¯¼ë²ˆí˜¸ 7ë²ˆì§¸ ìë¦¬ë¥¼ ì…ë ¥í•˜ì„¸ìš” : ");
+		int x = System.in.read() - 48; // 7ë²ˆì§¸ ìë¦¬ ìˆ˜ ì…ë ¥
+		int year = 0; // ì—°ëŒ€ë¥¼ ì €ì¥í•  Field
+		String sex = ""; // ì„±ë³„ì„ ì €ì¥í•  Field
 
 		switch (x) {
 		case 9:
@@ -21,13 +22,13 @@ public class Round06_Ex03 {
 			year = 2000;
 			break;
 		default:
-			System.out.println("Àß¸ø ÀÔ·ÂÇÏ¼Ì½À´Ï´Ù.");
-			System.exit(-1); // ÇÁ·Î±×·¥ Á¾·á
+			System.out.println("ì˜ëª» ì…ë ¥í•˜ì…¨ìŠµë‹ˆë‹¤.");
+			System.exit(-1); // í”„ë¡œê·¸ë¨ ì¢…ë£Œ
 		}
 
-		sex = x % 2 == 0 ? "¿©¼º" : "³²¼º";
+		sex = x % 2 == 0 ? "ì—¬ì„±" : "ë‚¨ì„±";
 
-		System.out.print("´ç½ÅÀº " + year + "³â´ë»ı ");
-		System.out.println(sex + "ÀÌ½Ê´Ï´Ù.");
+		System.out.print("ë‹¹ì‹ ì€ " + year + "ë…„ëŒ€ìƒ ");
+		System.out.println(sex + "ì´ì‹­ë‹ˆë‹¤.");
 	}
 }

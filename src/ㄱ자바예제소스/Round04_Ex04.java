@@ -1,10 +1,11 @@
+package ã„±ìë°”ì˜ˆì œì†ŒìŠ¤;
 public class Round04_Ex04 {
 	public static void main(String[] ar) {
-		System.out.printf("%s\n", "±è½ÂÇö");
-		System.out.printf("%10s\n\n", "±è½ÂÇö");
+		System.out.printf("%s\n", "ï¿½ï¿½ï¿½ï¿½ï¿½");
+		System.out.printf("%10s\n\n", "ï¿½ï¿½ï¿½ï¿½ï¿½");
 
-		String name = "±è½ÂÇö";
+		String name = "ï¿½ï¿½ï¿½ï¿½ï¿½";
 		int age = 20;
-		System.out.printf("%10s´ÔÀÇ ³ªÀÌ´Â %05d¼¼ ÀÔ´Ï´Ù.\n", name, age);
+		System.out.printf("%10sï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ì´ï¿½ %05dï¿½ï¿½ ï¿½Ô´Ï´ï¿½.\n", name, age);
 	}
 }

@@ -1,12 +1,13 @@
+package ã„±ìë°”ì˜ˆì œì†ŒìŠ¤;
 public class Round04_Ex07 {
 	public static void main(String[] ar) throws java.io.IOException {
-		System.out.print("ÀÔ·Â1 = "); // println ¾Æ´Ô.
+		System.out.print("ì…ë ¥1 = "); // println ì•„ë‹˜.
 		char aa = (char) System.in.read();
 		System.in.read();
 		System.in.read();
-		System.out.print("ÀÔ·Â2 = "); // println ¾Æ´Ô.
-		int bb = System.in.read() - 48; // ¼ıÀÚ¸¸ ÀÔ·ÂÇÒ °Í.
-		System.out.println("ÀÔ·ÂµÈ ¹®ÀÚ´Â " + aa + "ÀÔ´Ï´Ù.");
-		System.out.println("ÀÔ·ÂµÈ ¼ıÀÚ´Â " + bb + "ÀÔ´Ï´Ù.");
+		System.out.print("ì…ë ¥2 = "); // println ì•„ë‹˜.
+		int bb = System.in.read() - 48; // ìˆ«ìë§Œ ì…ë ¥í•  ê²ƒ.
+		System.out.println("ì…ë ¥ëœ ë¬¸ìëŠ” " + aa + "ì…ë‹ˆë‹¤.");
+		System.out.println("ì…ë ¥ëœ ìˆ«ìëŠ” " + bb + "ì…ë‹ˆë‹¤.");
 	}
 }

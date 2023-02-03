@@ -1,13 +1,25 @@
+package ã„±ìë°”ì˜ˆì œì†ŒìŠ¤;
 import java.io.*;
 
 public class Round04_Ex09 {
 	public static void main(String[] ar) throws java.io.IOException {
-		// ¹®ÀÚ¿­ ÀÔ·ÂÀ» À§ÇÑ Æ÷¸Ë ÁöÁ¤
+		// ë¬¸ìì—´ ì…ë ¥ì„ ìœ„í•œ í¬ë§· ì§€ì •
 		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
 
-		String name = ""; // name º¯¼öÀÇ ¼±¾ğ°ú ÃÊ±âÈ­
-		System.out.print("ÀÌ¸§À» ÀÔ·ÂÇÏ¼¼¿ä : "); // printlnÀÌ ¾Æ´Õ´Ï´Ù.
-		name = in.readLine(); // ÀÌ¸§À» ÀÔ·Â ¹Ş´Â´ä´Ï´Ù.
-		System.out.println("´ç½ÅÀÌ ÀÔ·ÂÇÏ½Å ÀÌ¸§Àº " + name + "ÀÔ´Ï´Ù.");
+		String name = ""; // name ë³€ìˆ˜ì˜ ì„ ì–¸ê³¼ ì´ˆê¸°í™”
+		System.out.print("ì´ë¦„ì„ ì…ë ¥í•˜ì„¸ìš” : "); // printlnì´ ì•„ë‹™ë‹ˆë‹¤.
+		name = in.readLine(); // ì´ë¦„ì„ ì…ë ¥ ë°›ëŠ”ë‹µë‹ˆë‹¤.
+		System.out.println("ë‹¹ì‹ ì´ ì…ë ¥í•˜ì‹  ì´ë¦„ì€ " + name + "ì…ë‹ˆë‹¤.");
+		
+		System.out.print("ìˆ˜1 : "); int su1 = Integer.parseInt(in.readLine());
+		System.out.print("ìˆ˜2 : "); int su2 = Integer.parseInt(in.readLine());
+		System.out.println("ê²°ê³¼ : " + (su1 + su2));
+		
+		System.out.println("ìˆ˜3 : "); String Su1 = in.readLine();
+		int su3 = Integer.parseInt(Su1);
+		System.out.println("ìˆ˜4 : "); String Su2 = in.readLine();
+		int su4 = Integer.parseInt(Su2);
+		System.out.println("ê²°ê³¼ : " + (su3 + su4));
 	}
+	
 }

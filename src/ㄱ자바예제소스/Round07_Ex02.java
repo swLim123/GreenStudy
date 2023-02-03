@@ -1,11 +1,12 @@
+package ã„±ìë°”ì˜ˆì œì†ŒìŠ¤;
 import java.io.*;
 
 public class Round07_Ex02 {
 	public static int aaa() throws IOException {
 		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
-		System.out.print("Ã¹¹øÂ° ¼ö = ");
+		System.out.print("ì²«ë²ˆì§¸ ìˆ˜ = ");
 		int a = Integer.parseInt(in.readLine());
-		System.out.print("µÎ¹øÂ° ¼ö = ");
+		System.out.print("ë‘ë²ˆì§¸ ìˆ˜ = ");
 		int b = Integer.parseInt(in.readLine());
 		if (a > b) {
 			return a;
@@ -15,9 +16,9 @@ public class Round07_Ex02 {
 
 	public static void bbb() throws IOException {
 		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
-		System.out.print("Ã¹¹øÂ° ¼ö = ");
+		System.out.print("ì²«ë²ˆì§¸ ìˆ˜ = ");
 		int a = Integer.parseInt(in.readLine());
-		System.out.print("µÎ¹øÂ° ¼ö = ");
+		System.out.print("ë‘ë²ˆì§¸ ìˆ˜ = ");
 		int b = Integer.parseInt(in.readLine());
 		int tot = 0;
 		if (a > b) {
@@ -28,7 +29,7 @@ public class Round07_Ex02 {
 		for (int i = a; i <= b; i++) {
 			tot += i;
 		}
-		System.out.println(a + " ~ " + b + "»çÀÌÀÇ ÇÕ = " + tot);
+		System.out.println(a + " ~ " + b + "ì‚¬ì´ì˜ í•© = " + tot);
 		return;
 	}
 
@@ -55,29 +56,29 @@ public class Round07_Ex02 {
 		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
 		int x = 0;
 		while (true) {
-			System.out.print("1:ÃÖ´ë¼ö 2:»çÀÌÇÕ 3:¼ö³ª¿­ 4:Á¾·á => ");
+			System.out.print("1:ìµœëŒ€ìˆ˜ 2:ì‚¬ì´í•© 3:ìˆ˜ë‚˜ì—´ 4:ì¢…ë£Œ => ");
 			x = Integer.parseInt(in.readLine());
-			if (x == 1) { // °á°úÇü return °ªÀ» »ç¿ëÇÑ ÇüÅÂ
+			if (x == 1) { // ê²°ê³¼í˜• return ê°’ì„ ì‚¬ìš©í•œ í˜•íƒœ
 				int k = aaa();
-				System.out.println("µÑ Áß ÃÖ´ë¼ö´Â " + k + "ÀÔ´Ï´Ù.");
+				System.out.println("ë‘˜ ì¤‘ ìµœëŒ€ìˆ˜ëŠ” " + k + "ì…ë‹ˆë‹¤.");
 			} else if (x == 2) { // Call By Name
 				bbb();
 			} else if (x == 3) { // Call By Value
-				System.out.print("Ã¹¹øÂ° ¼ö = ");
+				System.out.print("ì²«ë²ˆì§¸ ìˆ˜ = ");
 				int firstSu = Integer.parseInt(in.readLine());
-				System.out.print("µÎ¹øÂ° ¼ö = ");
+				System.out.print("ë‘ë²ˆì§¸ ìˆ˜ = ");
 				int secondSu = Integer.parseInt(in.readLine());
-				System.out.print("¼¼¹øÂ° ¼ö = ");
+				System.out.print("ì„¸ë²ˆì§¸ ìˆ˜ = ");
 				int thirdSu = Integer.parseInt(in.readLine());
 				String str = ccc(firstSu, secondSu, thirdSu);
-				System.out.println("Å« ¼øÀ¸·Î ³ª¿­Àº " + str);
+				System.out.println("í° ìˆœìœ¼ë¡œ ë‚˜ì—´ì€ " + str);
 			} else if (x == 4) {
 				break;
 			} else {
-				System.out.println("Àß¸ø ÀÔ·ÂÇÏ¼Ì½À´Ï´Ù.");
+				System.out.println("ì˜ëª» ì…ë ¥í•˜ì…¨ìŠµë‹ˆë‹¤.");
 			}
 			System.out.println();
 		}
-		System.out.println("¼ö°í ÇÏ¼Ì½À´Ï´Ù.");
+		System.out.println("ìˆ˜ê³  í•˜ì…¨ìŠµë‹ˆë‹¤.");
 	}
 }

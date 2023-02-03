@@ -1,16 +1,17 @@
+package ã„±ìžë°”ì˜ˆì œì†ŒìŠ¤;
 import java.io.*;
 
 public class Round06_Ex02 {
 	public static void main(String[] ar) throws IOException {
 		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
 		int firstsu = 0, secondsu = 0, thirdsu = 0;
-		int imsi = 0; // ÀÓ½Ã·Î »ç¿ëµÉ °ø°£
+		int imsi = 0; // ìž„ì‹œë¡œ ì‚¬ìš©ë  ê³µê°„
 
-		System.out.print("Ã¹¹øÂ° ¼ö = ");
+		System.out.print("ì²«ë²ˆì§¸ ìˆ˜ = ");
 		firstsu = Integer.parseInt(in.readLine());
-		System.out.print("µÎ¹øÂ° ¼ö = ");
+		System.out.print("ë‘ë²ˆì§¸ ìˆ˜ = ");
 		secondsu = Integer.parseInt(in.readLine());
-		System.out.print("¼¼¹øÂ° ¼ö = ");
+		System.out.print("ì„¸ë²ˆì§¸ ìˆ˜ = ");
 		thirdsu = Integer.parseInt(in.readLine());
 
 		if (secondsu >= firstsu && secondsu >= thirdsu) {
