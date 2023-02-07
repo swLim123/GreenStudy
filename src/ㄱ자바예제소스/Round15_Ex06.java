@@ -1,4 +1,6 @@
-class A6 extends Thread {
+package ㄱ자바예제소스
+;
+class A66 extends Thread {
 	public void run() {
 		while(true) {
 			java.util.Date date = new java.util.Date();
@@ -9,7 +11,7 @@ class A6 extends Thread {
 		}
 	}
 }
-class B6 extends Thread {
+class B66 extends Thread {
 	public void run() {
 		for(int i = 0; i < 1000; i++) {
 			System.out.println(i);
@@ -22,8 +24,8 @@ class B6 extends Thread {
 public class Round15_Ex06 {
 	public static void main(String[] args) {
 		System.out.println("Main Start!!");
-		A6 mt = new A6();
-		B6 ms = new B6();
+		A66 mt = new A66();
+		B66 ms = new B66();
 		mt.setDaemon(false);
 		ms.setDaemon(false);
 		mt.start();

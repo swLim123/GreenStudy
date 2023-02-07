@@ -1,3 +1,4 @@
+package ã„±ìë°”ì˜ˆì œì†ŒìŠ¤;
 import java.awt.*;
 
 public class Round17_Ex04 {
@@ -36,7 +37,7 @@ class Round17_Ex04_Sub extends Frame {
 		this.init();
 		this.start();
 		// this.setSize(300, 200);
-		this.pack(); // Çö FrameÀ» JVMÀÌ Á¤ÇÏ´Â Å©±â¿¡ ¸ÂÃá´Ù.
+		this.pack(); // ï¿½ï¿½ Frameï¿½ï¿½ JVMï¿½ï¿½ ï¿½ï¿½ï¿½Ï´ï¿½ Å©ï¿½â¿¡ ï¿½ï¿½ï¿½ï¿½ï¿½.
 		dimen = Toolkit.getDefaultToolkit().getScreenSize();
 		dimen1 = this.getSize();
 		xpos = (int) (dimen.getWidth() / 2 - dimen1.getWidth() / 2);
@@ -46,7 +47,7 @@ class Round17_Ex04_Sub extends Frame {
 	}
 
 	public void init() {
-		// È­¸é ±¸¼º ³ÖÀ» ºÎºĞ
+		// È­ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Îºï¿½
 		lb.setBackground(Color.yellow);
 		lb1.setBackground(Color.yellow);
 		lb2.setBackground(Color.yellow);
@@ -62,12 +63,12 @@ class Round17_Ex04_Sub extends Frame {
 		GridBagConstraints gc = new GridBagConstraints();
 		this.setLayout(gridbag);
 
-		// ÀÛ¾÷ ¿µ¿ª ½ÃÀÛ
+		// ï¿½Û¾ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
-		// ÀÛ¾÷ ¿µ¿ª ³¡
+		// ï¿½Û¾ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
 	}
 
 	public void start() {
-		// ÀÌº¥Æ®³ª Thread Ã³¸®ÇÒ ºÎºĞ
+		// ï¿½Ìºï¿½Æ®ï¿½ï¿½ Thread Ã³ï¿½ï¿½ï¿½ï¿½ ï¿½Îºï¿½
 	}
 }

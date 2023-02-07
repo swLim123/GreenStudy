@@ -1,3 +1,4 @@
+package ㄱ자바예제소스;
 import java.io.*;
 
 public class Round16_Ex01 {
@@ -9,7 +10,7 @@ public class Round16_Ex01 {
 			Thread.sleep(3000);
 		} catch (InterruptedException ie) {
 		}
-		System.out.println("����!!");
+		System.out.println("시점!!");
 		try {
 			Thread.sleep(3000);
 		} catch (InterruptedException ie) {

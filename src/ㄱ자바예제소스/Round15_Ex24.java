@@ -1,3 +1,4 @@
+package ㄱ자바예제소스;
 import java.util.*;
 class A24{}
 class B24{}

@@ -1,8 +1,9 @@
+package ã„±ìë°”ì˜ˆì œì†ŒìŠ¤;
 import java.io.*;
 public class Round15_Ex18 {
 	public static void main(String[] args) throws IOException {
 		Runtime rt = Runtime.getRuntime();
-		System.out.print("1.´ÙÀ½ 2.ÇÁ¸®Ã§ = ");
+		System.out.print("1.ë‹¤ìŒ 2.í”„ë¦¬ì±Œ = ");
 		int x = System.in.read() - 48;
 		System.in.read();
 		System.in.read();

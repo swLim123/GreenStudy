@@ -59,6 +59,14 @@ class Aircon
 	}
 	void BootStart()
 	{
+		if(selTem == 0)
+		{
+			System.out.println("온도를 설정해주세요.");
+		}
+		else
+		{
+			Booting();
+		}
 		int sel2;
 		System.out.println("에어컨이 가동됩니다.");
 		System.out.println("[[현재온도 : " + tem + "도]]");
@@ -71,14 +79,6 @@ class Aircon
 		if(sel2 == 1)
 		{
 			TempSelect();
-		}
-		if(selTem == 0)
-		{
-			System.out.println("온도를 설정해주세요.");
-		}
-		else
-		{
-			Booting();
 		}
 	}
 	void BootStop()

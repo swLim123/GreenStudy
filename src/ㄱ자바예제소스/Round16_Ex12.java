@@ -1,3 +1,4 @@
+package ã„±ìë°”ì˜ˆì œì†ŒìŠ¤;
 import java.io.*;
 
 class Round16_Ex12_Sub implements Serializable {
@@ -20,7 +21,7 @@ public class Round16_Ex12 {
 		oos.writeObject(ap);
 		oos.close();
 
-		// ¸¸¾à °´Ã¼´ÜÀ§ÀÇ Ãâ·ÂÀ» ÇÏÁö ¸øÇÑ´Ù¸é ´ÙÀ½°ú °°ÀÌ Ãâ·ÂÇØ¾ß ÇÑ´Ù.
+		// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ñ´Ù¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ø¾ï¿½ ï¿½Ñ´ï¿½.
 		/*
 		 * File f = new File("aaa.txt"); FileOutputStream fos = new
 		 * FileOutputStream(f); BufferedOutputStream bos = new

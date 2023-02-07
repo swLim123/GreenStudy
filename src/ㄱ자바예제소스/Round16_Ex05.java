@@ -1,3 +1,4 @@
+package ã„±ìë°”ì˜ˆì œì†ŒìŠ¤;
 import java.io.*;
 
 public class Round16_Ex05 {
@@ -12,12 +13,12 @@ public class Round16_Ex05 {
 			// fos.close();
 			// fos1.close();
 		} catch (FileNotFoundException fnfe) {
-			System.err.println("ÆÄÀÏÀ» ¸øÃ£°Ú´Ù.");
+			System.err.println("íŒŒì¼ì„ ëª»ì°¾ê² ë‹¤.");
 			System.exit(1);
 		} catch (IOException io) {
-			System.err.println("ÆÄÀÏ ÀÔÃâ·Â ¿¡·¯!!");
+			System.err.println("íŒŒì¼ ì…ì¶œë ¥ ì—ëŸ¬!!");
 			System.exit(1);
 		}
-		System.out.println("½ÇÇà³¡..!!");
+		System.out.println("ì‹¤í–‰ë..!!");
 	}
 }

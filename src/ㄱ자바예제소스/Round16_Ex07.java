@@ -1,3 +1,4 @@
+package ã„±ìë°”ì˜ˆì œì†ŒìŠ¤;
 import java.io.*;
 
 public class Round16_Ex07 {
@@ -9,7 +10,7 @@ public class Round16_Ex07 {
 		 * //BufferedOutputStream bos1 = //new BufferedOutputStream(fos,
 		 * 1024);//1024byte DataOutputStream dos = new DataOutputStream(bos);
 		 */
-		// 1byte Ãâ·ÂÀ» À§ÇÑ °´Ã¼
+		// 1byte ì¶œë ¥ì„ ìœ„í•œ ê°ì²´
 		DataOutputStream dos1 = new DataOutputStream(new BufferedOutputStream(
 				new FileOutputStream(new File(new File("c:\\java\\work"),
 						"kimsh.txt"))));
@@ -19,3 +20,4 @@ public class Round16_Ex07 {
 		dos1.close();
 	}
 }
+

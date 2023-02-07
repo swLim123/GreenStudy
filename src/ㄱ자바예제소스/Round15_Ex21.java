@@ -1,3 +1,4 @@
+package ㄱ자바예제소스;
 import java.util.*;
 public class Round15_Ex21 {
 	public static void main(String[] args) {

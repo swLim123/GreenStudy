@@ -1,10 +1,11 @@
+package ã„±ìë°”ì˜ˆì œì†ŒìŠ¤;
 import java.util.*;
 public class Round15_Ex22 {
 	public static void main(String[] args) {
 		Calendar ca = Calendar.getInstance();
 		//Date date = new Date();
 		int x = ca.get(Calendar.DAY_OF_YEAR);
-		System.out.println("¿À´ÃÀº ÀÏ³âÁß " + x + "¹øÂ° ³¯ÀÔ´Ï´Ù.");
+		System.out.println("ì˜¤ëŠ˜ì€ ì¼ë…„ì¤‘ " + x + "ë²ˆì§¸ ë‚ ì…ë‹ˆë‹¤.");
 		//Calendar ca1 = new Calendar();
 		int year = ca.get(Calendar.YEAR);
 		int month = ca.get(Calendar.MONTH);

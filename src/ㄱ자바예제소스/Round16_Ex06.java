@@ -1,3 +1,4 @@
+package ã„±ìë°”ì˜ˆì œì†ŒìŠ¤;
 import java.io.*;
 
 public class Round16_Ex06 {
@@ -5,7 +6,7 @@ public class Round16_Ex06 {
 			IOException {
 		/*
 		 * FileInputStream fis = new FileInputStream(FileDescriptor.in);
-		 * System.out.print(¡°ÀÔ·Â = ¡°); byte by = fis.read();
+		 * System.out.print(ï¿½ï¿½ï¿½Ô·ï¿½ = ï¿½ï¿½); byte by = fis.read();
 		 */
 		File file = new File("c:\\java\\work\\abc.txt");
 		FileInputStream fis = new FileInputStream(file);

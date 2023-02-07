@@ -1,31 +1,32 @@
+package ã„±ìë°”ì˜ˆì œì†ŒìŠ¤;
 import java.io.*;
 
 public class Round16_Ex03 {
 	public static void main(String[] args) {
 		/*
 		 * File f = new File("c:\\java\\work1"); boolean bool = f.mkdir();
-		 * if(bool) System.out.println("Àß ¸¸µé¾î Á³´Ù."); else
-		 * System.out.println("¸¸µé±â ½ÇÆĞ´Ù.");
+		 * if(bool) System.out.println("ì˜ ë§Œë“¤ì–´ ì¡Œë‹¤."); else
+		 * System.out.println("ë§Œë“¤ê¸° ì‹¤íŒ¨ë‹¤.");
 		 */
-		// workÆú´õ¿¡ abc.txt°¡ ¾ø´Ù¸é
-		// abc.txt¶ó´Â ÆÄÀÏÀº ¾ø½À´Ï´Ù. ¶ó°í ¶ß¸é µÇ°í
-		// workÆú´õ¿¡ abc.txt°¡ ÀÖ´Ù¸é
-		// ÆÄÀÏ¸í : abc.txt
-		// ÆÄÀÏ °æ·Î : c:/java/work
-		// ÆÄÀÏ Å©±â : 0kb
-		// ÃÖÁ¾ ¼öÁ¤ÀÏ : Aug 31 2005, 15:22:47 ÀÌ¶ó°í Ãâ·ÂÇÏ¸é µÈ´Ù.
-		// ±×¸®°í ÇÁ·Î±×·¥ Á¾·á½Ã ÆÄÀÏ »èÁ¦ÇÑ´Ù.
+		// workí´ë”ì— abc.txtê°€ ì—†ë‹¤ë©´
+		// abc.txtë¼ëŠ” íŒŒì¼ì€ ì—†ìŠµë‹ˆë‹¤. ë¼ê³  ëœ¨ë©´ ë˜ê³ 
+		// workí´ë”ì— abc.txtê°€ ìˆë‹¤ë©´
+		// íŒŒì¼ëª… : abc.txt
+		// íŒŒì¼ ê²½ë¡œ : c:/java/work
+		// íŒŒì¼ í¬ê¸° : 0kb
+		// ìµœì¢… ìˆ˜ì •ì¼ : Aug 31 2005, 15:22:47 ì´ë¼ê³  ì¶œë ¥í•˜ë©´ ëœë‹¤.
+		// ê·¸ë¦¬ê³  í”„ë¡œê·¸ë¨ ì¢…ë£Œì‹œ íŒŒì¼ ì‚­ì œí•œë‹¤.
 		File f = new File("c:\\java\\work\\abc.txt");
 		if (f.exists()) {
 			f.deleteOnExit();
-			System.out.println("ÆÄÀÏ¸í : " + f.getName());
-			System.out.println("ÆÄÀÏ °æ·Î : " + f.getPath());
-			System.out.println("ÆÄÀÏ °æ·Î : " + f.getParent());
-			System.out.println("ÆÄÀÏ Å©±â : " + +f.length() + "kb");
-			System.out.println("ÃÖÁ¾ ¼öÁ¤ÀÏ : "
+			System.out.println("íŒŒì¼ëª… : " + f.getName());
+			System.out.println("íŒŒì¼ ê²½ë¡œ : " + f.getPath());
+			System.out.println("íŒŒì¼ ê²½ë¡œ : " + f.getParent());
+			System.out.println("íŒŒì¼ í¬ê¸° : " + +f.length() + "kb");
+			System.out.println("ìµœì¢… ìˆ˜ì •ì¼ : "
 					+ new java.util.Date(f.lastModified()));
 		} else {
-			System.out.println(f.getName() + "¶ó´Â ÆÄÀÏÀÌ ¾ø½À´Ï´Ù.");
+			System.out.println(f.getName() + "ë¼ëŠ” íŒŒì¼ì´ ì—†ìŠµë‹ˆë‹¤.");
 		}
 	}
 }

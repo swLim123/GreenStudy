@@ -1,3 +1,4 @@
+package ã„±ìë°”ì˜ˆì œì†ŒìŠ¤;
 public class Round15_Ex07 {
 	public static void main(String[] args) {
 		try{
@@ -5,7 +6,7 @@ public class Round15_Ex07 {
 			int x = System.in.read() - 48;
 			System.out.println("x = " + x);
 		}catch(java.io.IOException io) {
-			System.err.println("´©°¡ ¼± ²÷¾ú´Ù.");
+			System.err.println("ëˆ„ê°€ ì„  ëŠì—ˆë‹¤.");
 			System.exit(0);
 		}
 	}

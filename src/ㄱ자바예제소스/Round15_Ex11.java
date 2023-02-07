@@ -1,3 +1,4 @@
+package ã„±ìë°”ì˜ˆì œì†ŒìŠ¤;
 import java.io.*;
 public class Round15_Ex11{
 	private static BufferedReader in;
@@ -14,7 +15,7 @@ public class Round15_Ex11{
 					System.out.print("SU1 = ");
 					su1 = Integer.parseInt(in.readLine());
 				}catch(NumberFormatException nfe) {
-					System.out.println("¼ıÀÚ¸¸ ÀÔ·Â °¡´É!");
+					System.out.println("ìˆ«ìë§Œ ì…ë ¥ ê°€ëŠ¥!");
 					flag = 1;
 				}
 			}while(flag != 0);
@@ -29,11 +30,11 @@ public class Round15_Ex11{
 					str = in.readLine();
 					yon = str.charAt(0);
 				}catch(StringIndexOutOfBoundsException siooe) {
-					System.out.println("¹¹µç ÀÔ·ÂÀº ÇØ¾ß ÇÕ´Ï´Ù.");
+					System.out.println("ë­ë“  ì…ë ¥ì€ í•´ì•¼ í•©ë‹ˆë‹¤.");
 					flag = 1;
 				}
 				if(str.length() != 1) {
-					System.out.println("¿¬»êÀÚ´Â 1ÀÚ¸® ¿©¾ß ÇÕ´Ï´Ù.");
+					System.out.println("ì—°ì‚°ìëŠ” 1ìë¦¬ ì—¬ì•¼ í•©ë‹ˆë‹¤.");
 					flag = 1;
 				}
 			}while(flag != 0 || yon != '+' && 
@@ -44,7 +45,7 @@ public class Round15_Ex11{
 					System.out.print("SU2 = ");
 					su2 = Integer.parseInt(in.readLine());
 				}catch(NumberFormatException nfe) {
-					System.out.println("¼ıÀÚ¸¸ ÀÔ·Â °¡´É!");
+					System.out.println("ìˆ«ìë§Œ ì…ë ¥ ê°€ëŠ¥!");
 					flag = 1;
 				}
 			}while(flag != 0);
@@ -57,7 +58,7 @@ public class Round15_Ex11{
 				case '/' : tot = su1 / su2; break;
 				}
 			}catch(ArithmeticException ae) {
-				System.out.println("0À¸·Î ³ª´­¼ö´Â ¾ø½À´Ï´Ù.");
+				System.out.println("0ìœ¼ë¡œ ë‚˜ëˆŒìˆ˜ëŠ” ì—†ìŠµë‹ˆë‹¤.");
 				flag = 1;
 			}
 			

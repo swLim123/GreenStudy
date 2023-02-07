@@ -1,3 +1,4 @@
+package ã„±ìë°”ì˜ˆì œì†ŒìŠ¤;
 import java.io.*;
 public class Round15_Ex08 {
 	public static void main(String[] args) throws IOException{
@@ -10,7 +11,7 @@ public class Round15_Ex08 {
 			try {
 				x = Integer.parseInt(in.readLine());
 			}catch(NumberFormatException nfe) {
-				System.out.println("x´Â ¼ıÀÚ¿©¾ß ÇÕ´Ï´Ù.");
+				System.out.println("xëŠ” ìˆ«ìì—¬ì•¼ í•©ë‹ˆë‹¤.");
 				bool = true;
 			}
 		}while(bool);
@@ -21,7 +22,7 @@ public class Round15_Ex08 {
 			try {
 				y = Integer.parseInt(in.readLine());
 			}catch(NumberFormatException nfe) {
-				System.out.println("y´Â ¼ıÀÚ¿©¾ß ÇÕ´Ï´Ù.");
+				System.out.println("yëŠ” ìˆ«ìì—¬ì•¼ í•©ë‹ˆë‹¤.");
 				bool = true;
 			}
 		}while(bool);
@@ -30,6 +31,7 @@ public class Round15_Ex08 {
 			tot = x / y;
 		}catch(ArithmeticException ae) {
 			tot = x;
+			System.out.println("0ìœ¼ë¡œëŠ” ë‚˜ëˆŒ ìˆ˜ ì—†ìŠµë‹ˆë‹¤.");
 		}
 		System.out.println(x + " / " + y + " = " + tot);  
 	}

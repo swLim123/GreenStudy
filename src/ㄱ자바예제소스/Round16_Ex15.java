@@ -1,3 +1,4 @@
+package ã„±ìë°”ì˜ˆì œì†ŒìŠ¤;
 import java.io.*;
 import java.util.*;
 
@@ -14,14 +15,14 @@ public class Round16_Ex15 {
 			ois.close();
 		}
 		while (true) {
-			System.out.print("1.Ä£±¸µî·Ï 2.ÀüÃ¼º¸±â 3.Á¾·á = ");
+			System.out.print("1.ì¹œêµ¬ë“±ë¡ 2.ì „ì²´ë³´ê¸° 3.ì¢…ë£Œ = ");
 			int x = System.in.read() - 48;
 			System.in.read();
 			System.in.read();
 			if (x == 1) {
 				Round16_Ex14 ps = new Round16_Ex14();
 				vc.add(ps);
-				System.out.println("Ä£±¸ 1¸íÀ» µî·Ï ÇÏ¿´½À´Ï´Ù.");
+				System.out.println("ì¹œêµ¬ 1ëª…ì„ ë“±ë¡ í•˜ì˜€ìŠµë‹ˆë‹¤.");
 			} else if (x == 2) {
 				for (int i = 0; i < vc.size(); i++) {
 					Round16_Ex14 imsi = (Round16_Ex14) vc.elementAt(i);
@@ -34,7 +35,7 @@ public class Round16_Ex15 {
 				oos.close();
 				System.exit(0);
 			} else {
-				System.out.println("Àß¸ø ÀÔ·Â!!");
+				System.out.println("ì˜ëª» ì…ë ¥!!");
 			}
 		}
 	}

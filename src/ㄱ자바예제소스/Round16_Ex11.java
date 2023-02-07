@@ -1,3 +1,4 @@
+package ã„±ìë°”ì˜ˆì œì†ŒìŠ¤;
 import java.io.*;
 
 public class Round16_Ex11 {
@@ -7,10 +8,10 @@ public class Round16_Ex11 {
 		FileOutputStream fos = new FileOutputStream(file, true);
 		BufferedOutputStream bos = new BufferedOutputStream(fos, 1024);
 		PrintStream ps = new PrintStream(bos);
-		System.setErr(ps); // System.err¿¡ ´ëÇÑ ¸®´ÙÀÌ·º¼Ç
+		System.setErr(ps); // System.errì— ëŒ€í•œ ë¦¬ë‹¤ì´ë ‰ì…˜
 
-		System.out.println("Ãâ·ÂÇÑ´Ù. È­¸éÀ¸·Î...");
-		System.err.println("Ãâ·ÂÇÑ´Ù. ÆÄÀÏ·Î...");
+		System.out.println("ì¶œë ¥í•œë‹¤. í™”ë©´ìœ¼ë¡œ...");
+		System.err.println("ì¶œë ¥í•œë‹¤. íŒŒì¼ë¡œ...");
 
 		System.err.close();
 	}

@@ -1,3 +1,4 @@
+package ã„±ìë°”ì˜ˆì œì†ŒìŠ¤;
 import java.awt.*;
 
 public class Round17_Ex02 {
@@ -14,20 +15,20 @@ class Round17_Ex02_Sub extends Frame {
 	private Label lb = new Label("Test");
 
 	public Round17_Ex02_Sub() {
-		super("Á¦¸ñ ³Ö±â");
-		this.init(); // 24¶óÀÎÀÇ init() Method È£Ãâ
-		this.start(); // 27¶óÀÎÀÇ start() Method È£Ãâ
-		this.setSize(300, 200); // ÇöÀç ÇÁ·¹ÀÓ È­¸éÀÇ Å©±â ÁöÁ¤
+		super("ì œëª© ë„£ê¸°");
+		this.init(); // 24ë¼ì¸ì˜ init() Method í˜¸ì¶œ
+		this.start(); // 27ë¼ì¸ì˜ start() Method í˜¸ì¶œ
+		this.setSize(500, 500); // í˜„ì¬ í”„ë ˆì„ í™”ë©´ì˜ í¬ê¸° ì§€ì •
 		dimen = Toolkit.getDefaultToolkit().getScreenSize();
 		dimen1 = this.getSize();
 		xpos = (int) (dimen.getWidth() / 2 - dimen1.getWidth() / 2);
 		ypos = (int) (dimen.getHeight() / 2 - dimen1.getHeight() / 2);
-		this.setLocation(xpos, ypos); // ÇöÀç ÇÁ·¹ÀÓÀÇ Áß¾Ó ¹èÄ¡
-		this.setVisible(true); // ÇöÀç ÇÁ·¹ÀÓÀ» È­¸é»ó¿¡ ³ªÅ¸³ª°Ô ÇÔ.
+		this.setLocation(xpos, ypos); // í˜„ì¬ í”„ë ˆì„ì˜ ì¤‘ì•™ ë°°ì¹˜
+		this.setVisible(true); // í˜„ì¬ í”„ë ˆì„ì„ í™”ë©´ìƒì— ë‚˜íƒ€ë‚˜ê²Œ í•¨.
 	}
 
 	public void init() {
-		// È­¸é ±¸¼º ³ÖÀ» ºÎºĞ
+		// í™”ë©´ êµ¬ì„± ë„£ì„ ë¶€ë¶„
 		this.setLayout(null);
 		lb.setBackground(Color.yellow);
 		this.add(lb);
@@ -35,6 +36,7 @@ class Round17_Ex02_Sub extends Frame {
 	}
 
 	public void start() {
-		// ÀÌº¥Æ®³ª Thread Ã³¸®ÇÒ ºÎºĞ
+		// ì´ë²¤íŠ¸ë‚˜ Thread ì²˜ë¦¬í•  ë¶€ë¶„
 	}
 }
+

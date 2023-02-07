@@ -1,17 +1,18 @@
+package ã„±ìë°”ì˜ˆì œì†ŒìŠ¤;
 import java.io.*;
 
 public class Round16_Ex04 {
 	public static void main(String[] args) {
-		// Æ¯Á¤ Æú´õ¿¡¼­
-		// È®ÀåÀÚ¸í .java¸¸ °ñ¶ó¼­
-		// Ãâ·ÂÇÏµµ·Ï ÇÑ´Ù.
+		// íŠ¹ì • í´ë”ì—ì„œ
+		// í™•ì¥ìëª… .javaë§Œ ê³¨ë¼ì„œ
+		// ì¶œë ¥í•˜ë„ë¡ í•œë‹¤.
 		// ex)
 		// 1. CalcTest.java
 		// 2. ExceptionTest.java
 		// 3. MyException.java
 		// 4. ...
-		// ... µîµî... ÀÌ·±½ÄÀ¸·Î Ãâ·ÂµÇµµ·ÏÇÑ´Ù.
-		File f = new File("c:\\java\\eclipse\\workspace\\Round16_Examples");
+		// ... ë“±ë“±... ì´ëŸ°ì‹ìœ¼ë¡œ ì¶œë ¥ë˜ë„ë¡í•œë‹¤.
+		File f = new File("C:\\JAVA\\Green\\src\\ã„±ìë°”ì˜ˆì œì†ŒìŠ¤");
 		// String[] files = f.list();
 		File[] files = f.listFiles();
 		for (int i = 0, j = 0; i < files.length; i++) {

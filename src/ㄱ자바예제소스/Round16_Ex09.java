@@ -1,3 +1,4 @@
+package ã„±ìë°”ì˜ˆì œì†ŒìŠ¤;
 import java.io.*;
 
 public class Round16_Ex09 {
@@ -6,8 +7,8 @@ public class Round16_Ex09 {
 				new File(new File("c:\\java\\work"), "kim.txt"))));
 		PrintWriter out1 = new PrintWriter(new BufferedWriter(
 				new OutputStreamWriter(System.out)));
-		out.println("ÆÄÀÏ¿¡ Àû´Â´Ù. ");
-		out1.println("È­¸é¿¡ »Ñ¸°´Ù. ");
+		out.println("íŒŒì¼ì— ì ëŠ”ë‹¤. ");
+		out1.println("í™”ë©´ì— ë¿Œë¦°ë‹¤. ");
 		out.close();
 		out1.close();
 	}
