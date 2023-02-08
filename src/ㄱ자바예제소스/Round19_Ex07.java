@@ -1,3 +1,4 @@
+package ã„±ìë°”ì˜ˆì œì†ŒìŠ¤;
 import java.awt.*;
 import java.awt.event.*;
 
@@ -15,7 +16,7 @@ class Round19_Ex07_Sub extends Frame implements MouseMotionListener,
 
 	private TextField jumin_tf2 = new TextField(7);
 
-	private Button jumin_bt = new Button("ÁßÃ¸");
+	private Button jumin_bt = new Button("ï¿½ï¿½Ã¸");
 
 	private Panel p = null;
 
@@ -108,9 +109,9 @@ class Round19_Ex07_Sub extends Frame implements MouseMotionListener,
 			}
 			final Dialog dlg = new Dialog(this, "OK", true);
 			dlg.setLayout(new BorderLayout());
-			String sss = "ÁÖ¹Î¹øÈ£ : " + first + "-" + second + "´Â »ç¿ëÇÒ ¼ö ÀÖ´Ù.";
+			String sss = "ï¿½Ö¹Î¹ï¿½È£ : " + first + "-" + second + "ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ö´ï¿½.";
 			dlg.add("Center", new Label(sss, Label.CENTER));
-			Button bt = new Button("È®ÀÎ");
+			Button bt = new Button("È®ï¿½ï¿½");
 			Panel pp = new Panel(new FlowLayout());
 			pp.add(bt);
 			bt.addActionListener(new ActionListener() {

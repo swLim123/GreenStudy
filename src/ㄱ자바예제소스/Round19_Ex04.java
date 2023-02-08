@@ -1,3 +1,4 @@
+package ã„±ìë°”ì˜ˆì œì†ŒìŠ¤;
 import java.awt.*;
 import java.awt.event.*;
 
@@ -40,10 +41,10 @@ class Round19_Ex04_Sub extends Frame implements ItemListener {
 	public void itemStateChanged(ItemEvent e) {
 		if (e.getSource() == ch) {
 			String str = ch.getSelectedItem();
-			System.out.println("¾ò¾î¿Â ¹®ÀÚ¿­ = " + str);
+			System.out.println("ì–»ì–´ì˜¨ ë¬¸ìì—´ = " + str);
 		} else if (e.getSource() == li) {
 			String str = li.getSelectedItem();
-			System.out.println("¸®½ºÆ®¿¡¼­ ¾ò¾î¿Â ¹®ÀÚ = " + str);
+			System.out.println("ë¦¬ìŠ¤íŠ¸ì—ì„œ ì–»ì–´ì˜¨ ë¬¸ì = " + str);
 		}
 	}
 }

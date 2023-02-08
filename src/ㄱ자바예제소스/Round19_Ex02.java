@@ -1,3 +1,4 @@
+package ã„±ìë°”ì˜ˆì œì†ŒìŠ¤;
 import java.awt.*;
 import java.awt.event.*;
 
@@ -12,11 +13,11 @@ class Round19_Ex02_Sub extends Frame implements ActionListener {
 
 	private int xpos, ypos;
 
-	private Label lb = new Label("°á°úÇ¥½Ã : ÇöÀç ´©¸¥ ¹öÆ°ÀÌ ¾ø½À´Ï´Ù.", Label.CENTER);
+	private Label lb = new Label("ê²°ê³¼í‘œì‹œ : í˜„ì¬ ëˆ„ë¥¸ ë²„íŠ¼ì´ ì—†ìŠµë‹ˆë‹¤.", Label.CENTER);
 
-	private Button bt = new Button("¹öÆ° 1");
+	private Button bt = new Button("ë²„íŠ¼ 1");
 
-	private Button bt1 = new Button("¹öÆ° 2");
+	private Button bt1 = new Button("ë²„íŠ¼ 2");
 
 	public Round19_Ex02_Sub() {
 		super();
@@ -33,7 +34,7 @@ class Round19_Ex02_Sub extends Frame implements ActionListener {
 	}
 
 	public void init() {
-		// È­¸é ±¸¼º ³ÖÀ» ºÎºĞ
+		// í™”ë©´ êµ¬ì„± ë„£ì„ ë¶€ë¶„
 		BorderLayout border = new BorderLayout();
 		this.setLayout(border);
 
@@ -54,13 +55,24 @@ class Round19_Ex02_Sub extends Frame implements ActionListener {
 		this.add("Center", p);
 	}
 
+	
 	public void start() {
-		// Event³ª ¾²·¹µå Ã³¸®ÇÒ ºÎºĞ
+		// Eventë‚˜ ì“°ë ˆë“œ ì²˜ë¦¬í•  ë¶€ë¶„
 		bt.addActionListener(this);
 		bt1.addActionListener(this);
 	}
 
 	public void actionPerformed(ActionEvent e) {
-
+		
+		if(e.getSource()==bt)
+		{
+			lb.setText("ë²„íŠ¼ 1 í´ë¦­!");
+			System.out.println("Button1 clicked");
+		}
+		else if(e.getSource()==bt1)
+		{
+			lb.setText("ë²„íŠ¼ 2 í´ë¦­!");
+			System.out.println("Button2 clicked");
+		}
 	}
 }

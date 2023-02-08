@@ -1,8 +1,9 @@
+package ã„±ìë°”ì˜ˆì œì†ŒìŠ¤;
 import java.awt.*;
 import java.awt.event.*;
 
 class Round19_Ex06_Sub extends Frame implements MouseListener {
-	private Button bt = new Button("³ª¸¦ ´­·¯ºÁ¿ä");
+	private Button bt = new Button("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
 
 	public Round19_Ex06_Sub() {
 		super("Test");
@@ -27,25 +28,25 @@ class Round19_Ex06_Sub extends Frame implements MouseListener {
 	}
 
 	public void mouseClicked(MouseEvent e) {
-		System.out.println("Å¬¸¯Çß´Ù.");
+		System.out.println("Å¬ï¿½ï¿½ï¿½ß´ï¿½.");
 	}
 
 	public void mousePressed(MouseEvent e) {
-		System.out.println("´©¸¥ÇüÅÂ");
+		System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
 	}
 
 	public void mouseReleased(MouseEvent e) {
-		System.out.println("¶¾ »óÅÂ");
+		System.out.println("ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½");
 	}
 
 	public void mouseEntered(MouseEvent e) {
-		System.out.println("ÇØ´ç À§Ä¡¿¡ µé¾î ¿Ô´Ù.");
+		System.out.println("ï¿½Ø´ï¿½ ï¿½ï¿½Ä¡ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½Ô´ï¿½.");
 		bt.setLocation((int) (Math.random() * 300) - 80,
 				(int) (Math.random() * 200) - 30);
 	}
 
 	public void mouseExited(MouseEvent e) {
-		System.out.println("¹ş¾î ³µ´Ù.");
+		System.out.println("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½.");
 	}
 }
 

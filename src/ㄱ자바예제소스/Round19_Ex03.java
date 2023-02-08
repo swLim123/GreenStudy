@@ -1,12 +1,13 @@
+package ã„±ìë°”ì˜ˆì œì†ŒìŠ¤;
 import java.awt.*;
 import java.awt.event.*;
 
 class Round19_Ex03_Sub extends Frame implements FocusListener {
 	private BorderLayout bl = new BorderLayout();
 
-	private Label lb = new Label("ÀÌ¸§ = ", Label.RIGHT);
+	private Label lb = new Label("ï¿½Ì¸ï¿½ = ", Label.RIGHT);
 
-	private Label lb1 = new Label("ÁÖ¹Î¹øÈ£ = ", Label.RIGHT);
+	private Label lb1 = new Label("ï¿½Ö¹Î¹ï¿½È£ = ", Label.RIGHT);
 
 	private TextField tf = new TextField();
 
@@ -14,9 +15,9 @@ class Round19_Ex03_Sub extends Frame implements FocusListener {
 
 	private TextField tf2 = new TextField();
 
-	private Button bt = new Button("È®ÀÎ");
+	private Button bt = new Button("È®ï¿½ï¿½");
 
-	private Button bt1 = new Button("Ãë¼Ò");
+	private Button bt1 = new Button("ï¿½ï¿½ï¿½");
 
 	public Round19_Ex03_Sub() {
 		super("Focus Event!");

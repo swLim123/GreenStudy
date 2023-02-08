@@ -1,9 +1,10 @@
+package ㄱ자바예제소스;
 import java.awt.*;
 import java.awt.event.*;
 
 class Round19_Ex08_Sub extends Frame {
 	public Round19_Ex08_Sub() {
-		super("����");
+		super("제목");
 		this.init();
 		this.start();
 		this.setSize(300, 200);

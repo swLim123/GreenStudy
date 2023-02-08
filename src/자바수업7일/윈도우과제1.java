@@ -20,7 +20,7 @@ class WinStudy1 extends Frame
 	TextField tfName = new TextField();
 	TextField tfHp = new TextField();
 	Button bt = new Button("가입하기");
-	Button bt2 = new Button("확인");
+	Button bt2 = new Button("중복확인");
 	Font font25 = new Font("TimesRoman", Font.PLAIN, 25);
 	Font font15 = new Font("SansSerif", Font.BOLD, 15);
 
@@ -72,11 +72,11 @@ class WinStudy1 extends Frame
 		tfHp.setFont(font15);
 		
 		this.add(bt);
-		bt.setBounds(140, 350, 70, 40);
+		bt.setBounds(110, 350, 120, 40);
 		bt.setFont(font15);
 		
 		this.add(bt2);
-		bt2.setBounds(240, 139, 50, 30);
+		bt2.setBounds(235, 139, 100, 30);
 		bt2.setFont(font15);
 	}
 }

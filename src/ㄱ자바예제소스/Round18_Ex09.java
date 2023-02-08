@@ -1,4 +1,4 @@
-package ㄱ자바예제소스;
+c
 import java.awt.*;
 
 public class Round18_Ex09 {

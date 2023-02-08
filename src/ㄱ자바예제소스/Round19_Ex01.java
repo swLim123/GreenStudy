@@ -1,3 +1,4 @@
+package ã„±ìë°”ì˜ˆì œì†ŒìŠ¤;
 import java.awt.*;
 import java.awt.event.*;
 
@@ -12,10 +13,10 @@ class Round19_Ex01_Sub extends Frame {
 
 	private int xpos, ypos;
 
-	private Button bt = new Button("´İ±â");
+	private Button bt = new Button("ë‹«ê¸°");
 
 	public Round19_Ex01_Sub() {
-		super("ÀÌº¥Æ®!");
+		super("ì´ë²¤íŠ¸!");
 		this.init();
 		this.start();
 		this.setSize(300, 200);
@@ -29,7 +30,7 @@ class Round19_Ex01_Sub extends Frame {
 	}
 
 	public void init() {
-		// È­¸é ±¸¼º ³ÖÀ» ºÎºĞ
+		// í™”ë©´ êµ¬ì„± ë„£ì„ ë¶€ë¶„
 		GridBagLayout gridbag = new GridBagLayout();
 		GridBagConstraints gc = new GridBagConstraints();
 
@@ -40,7 +41,7 @@ class Round19_Ex01_Sub extends Frame {
 	}
 
 	public void start() {
-		// ÀÌº¥Æ®³ª ¾²·¹µå Ã³¸®ÇÒ ºÎºĞ
+		// ì´ë²¤íŠ¸ë‚˜ ì“°ë ˆë“œ ì²˜ë¦¬í•  ë¶€ë¶„
 		bt.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				System.exit(0);
