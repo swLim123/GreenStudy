@@ -1,10 +1,11 @@
+package ㄱ자바예제소스;
 import java.awt.*;
 import java.awt.event.*;
 
 class Round20_Ex04_Sub extends Frame implements ActionListener {
-	private Button bt = new Button("Ȯ��");
+	private Button bt = new Button("확대");
 
-	private Button bt1 = new Button("���");
+	private Button bt1 = new Button("축소");
 
 	private Image img = null;
 

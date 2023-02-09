@@ -1,9 +1,10 @@
+package ã„±ìë°”ì˜ˆì œì†ŒìŠ¤;
 import java.awt.*;
 import java.awt.event.*;
 
 class Round20_Ex02_Sub extends Frame {
 	public Round20_Ex02_Sub() {
-		super("¿ø ±×¸®±â!");
+		super("ì› ê·¸ë¦¬ê¸°!");
 		this.init();
 		this.start();
 		this.setSize(500, 500);
@@ -30,7 +31,7 @@ class Round20_Ex02_Sub extends Frame {
 			int w = (int) (Math.random() * 50) + 50;
 			int h = (int) (Math.random() * 50) + 50;
 			int dist = (int) (Math.random() * 4);
-			// µµÇü¼±ÅÃ
+			// ë„í˜•ì„ íƒ
 			if (dist == 0)
 				g.drawRect(x, y, w, h);
 			else if (dist == 1)
@@ -39,9 +40,9 @@ class Round20_Ex02_Sub extends Frame {
 				g.drawOval(x, y, w, h);
 			else
 				g.fillOval(x, y, w, h);
-			// µµÇü¼±ÅÃ
+			// ë„í˜•ì„ íƒ
 			try {
-				Thread.sleep(100); // 0.1ÃÊ ½Ã°£Áö¿¬
+				Thread.sleep(100); // 0.1ì´ˆ ì‹œê°„ì§€ì—°
 			} catch (InterruptedException ee) {
 			}
 		}

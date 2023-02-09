@@ -5,9 +5,9 @@ import java.awt.event.*;
 class Round19_Ex03_Sub extends Frame implements FocusListener {
 	private BorderLayout bl = new BorderLayout();
 
-	private Label lb = new Label("�̸� = ", Label.RIGHT);
+	private Label lb = new Label("이름 = ", Label.RIGHT);
 
-	private Label lb1 = new Label("�ֹι�ȣ = ", Label.RIGHT);
+	private Label lb1 = new Label("주민번호 = ", Label.RIGHT);
 
 	private TextField tf = new TextField();
 
@@ -15,9 +15,9 @@ class Round19_Ex03_Sub extends Frame implements FocusListener {
 
 	private TextField tf2 = new TextField();
 
-	private Button bt = new Button("Ȯ��");
+	private Button bt = new Button("확인");
 
-	private Button bt1 = new Button("���");
+	private Button bt1 = new Button("취소");
 
 	public Round19_Ex03_Sub() {
 		super("Focus Event!");

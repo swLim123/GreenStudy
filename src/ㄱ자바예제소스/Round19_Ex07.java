@@ -16,7 +16,7 @@ class Round19_Ex07_Sub extends Frame implements MouseMotionListener,
 
 	private TextField jumin_tf2 = new TextField(7);
 
-	private Button jumin_bt = new Button("��ø");
+	private Button jumin_bt = new Button("중첩");
 
 	private Panel p = null;
 
@@ -109,9 +109,9 @@ class Round19_Ex07_Sub extends Frame implements MouseMotionListener,
 			}
 			final Dialog dlg = new Dialog(this, "OK", true);
 			dlg.setLayout(new BorderLayout());
-			String sss = "�ֹι�ȣ : " + first + "-" + second + "�� ����� �� �ִ�.";
+			String sss = "주민번호 : " + first + "-" + second + "는 사용할 수 있다.";
 			dlg.add("Center", new Label(sss, Label.CENTER));
-			Button bt = new Button("Ȯ��");
+			Button bt = new Button("확인");
 			Panel pp = new Panel(new FlowLayout());
 			pp.add(bt);
 			bt.addActionListener(new ActionListener() {

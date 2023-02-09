@@ -117,7 +117,7 @@ class WinTest5 extends Frame implements ActionListener
 			String Name = tf1.getText();
 			lb5.setText(Name);
 			int kor = Integer.parseInt(tf2.getText());
-			int eng = Integer.parseInt(tf3.getText());
+			int eng = Integer.parseInt(tf3.getText());\
 			int mat = Integer.parseInt(tf4.getText());
 			int tot = kor + eng + mat;
 			int avg = tot/3;

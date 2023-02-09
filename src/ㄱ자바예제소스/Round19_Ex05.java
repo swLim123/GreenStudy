@@ -30,11 +30,9 @@ class Round19_Ex05_Sub extends Frame implements KeyListener {
 		tf.addKeyListener(this);
 	}
 
-	public void paint(Graphics g) {
-
-	}
-
-	public void keyPressed(KeyEvent e) {
+	public void keyPressed(KeyEvent e) 
+	{
+		System.out.println("keyPressed");
 	}
 
 	public void keyReleased(KeyEvent e) {

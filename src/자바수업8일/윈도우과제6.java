@@ -76,6 +76,7 @@ class WinTest6 extends Frame implements ActionListener
 	}
 	void start()
 	{
+		
 		bt.addActionListener(this);
 		this.addWindowListener(new WindowAdapter() 
 		{

@@ -1,3 +1,4 @@
+package ã„±ìë°”ì˜ˆì œì†ŒìŠ¤;
 /*
  * Created on 2005. 10. 20.
  *
@@ -141,7 +142,7 @@ class Round20_Ex05_Sub extends Frame implements MouseListener,
 	private Vector vc = new Vector();
 
 	public Round20_Ex05_Sub() {
-		super("±×¸²ÆÇ!");
+		super("ê·¸ë¦¼íŒ!");
 		this.init();
 		this.start();
 		this.setSize(500, 500);
@@ -318,7 +319,7 @@ class Round20_Ex05_Sub extends Frame implements MouseListener,
 			x = y = x1 = y1 = dist = 0;
 			this.repaint();
 		} else if (e.getSource() == fopen) {
-			FileDialog fdlg = new FileDialog(this, "¿­±â", FileDialog.LOAD);
+			FileDialog fdlg = new FileDialog(this, "ì—´ê¸°", FileDialog.LOAD);
 			fdlg.setVisible(true);
 			String dir = fdlg.getDirectory();
 			String file = fdlg.getFile();
@@ -335,7 +336,7 @@ class Round20_Ex05_Sub extends Frame implements MouseListener,
 			}
 
 		} else if (e.getSource() == fsave) {
-			FileDialog fdlg = new FileDialog(this, "ÀúÀå", FileDialog.SAVE);
+			FileDialog fdlg = new FileDialog(this, "ì €ì¥", FileDialog.SAVE);
 			fdlg.setVisible(true);
 			String dir = fdlg.getDirectory();
 			String file = fdlg.getFile();

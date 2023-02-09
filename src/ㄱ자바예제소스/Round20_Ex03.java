@@ -1,3 +1,4 @@
+package ㄱ자바예제소스;
 import java.awt.*;
 import java.awt.event.*;
 import java.util.*;
@@ -21,7 +22,7 @@ class Round20_Ex03_Sub extends Frame {
 	}
 
 	public void init() {
-		img = Toolkit.getDefaultToolkit().getImage("aaa.gif");
+		img = Toolkit.getDefaultToolkit().getImage("img/aaa.gif");
 	}
 
 	public void start() {
