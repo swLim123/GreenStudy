@@ -1,3 +1,4 @@
+package ã„±ìë°”ì˜ˆì œì†ŒìŠ¤;
 import java.awt.*;
 import javax.swing.*;
 
@@ -25,15 +26,15 @@ class Round22_Ex02_Sub extends JFrame {
 	public void init() {
 		im = new ImageIcon("title.gif");
 		im1 = new ImageIcon("title.gif");
-		con = this.getContentPane(); // ÀÛ¾÷ ¿µ¿ª È¹µæ
-		con.setLayout(new BorderLayout()); // ÀÛ¾÷ ¿µ¿ª¿¡ Layout ¼³Á¤
-		con.add("North", jl); // ÀÛ¾÷ ¿µ¿ª »ó´Ü¿¡ ÀÏ¹İ ¹öÆ° ³ÖÀ½
-		con.add("Center", new JButton("Test1", im1)); // ÀÛ¾÷ ¿µ¿ª Áß¾Ó¿¡ ÀÌ¹ÌÁö¿Í ÇÔ²² »ı¼ºµÈ
-														// ¹öÆ°À» ³ÖÀ½
+		con = this.getContentPane(); // ì‘ì—… ì˜ì—­ íšë“
+		con.setLayout(new BorderLayout()); // ì‘ì—… ì˜ì—­ì— Layout ì„¤ì •
+		con.add("North", jl); // ì‘ì—… ì˜ì—­ ìƒë‹¨ì— ì¼ë°˜ ë²„íŠ¼ ë„£ìŒ
+		con.add("Center", new JButton("Test1", im1)); // ì‘ì—… ì˜ì—­ ì¤‘ì•™ì— ì´ë¯¸ì§€ì™€ í•¨ê»˜ ìƒì„±ëœ
+														// ë²„íŠ¼ì„ ë„£ìŒ
 	}
 
 	public void start() {
-		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // X¹öÆ° ´©¸¦¶§ Á¾·áÃ³¸®
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // Xë²„íŠ¼ ëˆ„ë¥¼ë•Œ ì¢…ë£Œì²˜ë¦¬
 	}
 
 	public void paint(Graphics g) {
@@ -46,3 +47,4 @@ public class Round22_Ex02 {
 		Round22_Ex02_Sub es = new Round22_Ex02_Sub();
 	}
 }
+

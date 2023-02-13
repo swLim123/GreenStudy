@@ -1,17 +1,18 @@
+package ã„±ìë°”ì˜ˆì œì†ŒìŠ¤;
 import java.awt.*;
 import javax.swing.*;
 
 class Round22_Ex01_Sub extends JFrame {
-	private Container con; // ÀÛ¾÷ ¿µ¿ªÀ» À§ÇÑ ±âº» PanelÀ» ´ãÀ» °´Ã¼
+	private Container con; // ì‘ì—… ì˜ì—­ì„ ìœ„í•œ ê¸°ë³¸ Panelì„ ë‹´ì„ ê°ì²´
 
-	private ImageIcon im; // Å¸ÀÌÆ² ¹ÙÀÇ ÀÌ¹ÌÁö¸¦ °¡Áö´Â °´Ã¼
+	private ImageIcon im; // íƒ€ì´í‹€ ë°”ì˜ ì´ë¯¸ì§€ë¥¼ ê°€ì§€ëŠ” ê°ì²´
 
 	public Round22_Ex01_Sub() {
-		super("Á¦¸ñ");
+		super("ì œëª©");
 		this.init();
 		this.start();
-		im = new ImageIcon("title.gif"); // Æ¯Á¤ ÀÌ¹ÌÁö °´Ã¼ »ı¼º
-		this.setIconImage(im.getImage()); // Å¸ÀÌÆ² ¹Ù¿¡ ÀÌ¹ÌÁö ³Ö±â
+		im = new ImageIcon("title.gif"); // íŠ¹ì • ì´ë¯¸ì§€ ê°ì²´ ìƒì„±
+		this.setIconImage(im.getImage()); // íƒ€ì´í‹€ ë°”ì— ì´ë¯¸ì§€ ë„£ê¸°
 		this.setSize(300, 200);
 		Toolkit tk = Toolkit.getDefaultToolkit();
 		Dimension di = tk.getScreenSize();
@@ -22,13 +23,13 @@ class Round22_Ex01_Sub extends JFrame {
 	}
 
 	public void init() {
-		con = this.getContentPane(); // ´ÙÁß Panel¿¡¼­ÀÇ ±âº» ÀÛ¾÷ ¿µ¿ª È¹µæ
-		// Æû ±¸¼º ¿µ¿ª
+		con = this.getContentPane(); // ë‹¤ì¤‘ Panelì—ì„œì˜ ê¸°ë³¸ ì‘ì—… ì˜ì—­ íšë“
+		// í¼ êµ¬ì„± ì˜ì—­
 	}
 
 	public void start() {
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		// FrameÀÇ X¹öÆ°À» ´­·¶À» ¶§ÀÇ Event (WindowEvent Closing)
+		// Frameì˜ Xë²„íŠ¼ì„ ëˆŒë €ì„ ë•Œì˜ Event (WindowEvent Closing)
 	}
 }
 

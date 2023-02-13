@@ -42,10 +42,11 @@ class Memo
 	}
 	void MemoWrite() throws IOException 
 	{
-		sc.nextLine();
 		System.out.print("메모를 입력하세요 : ");
 		try (PrintWriter pw = new PrintWriter("c:/memo.txt")) {
-			String data = sc.nextLine();
+			String data = 
+			sc.nextLine();
+			sc.nextLine();
 			pw.println(sdf.format(c1.getTime()) + data);
 			
 			pw.close();
