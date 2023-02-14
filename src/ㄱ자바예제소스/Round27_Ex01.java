@@ -1,10 +1,11 @@
+package ã„±ìë°”ì˜ˆì œì†ŒìŠ¤;
 public class Round27_Ex01 {
 	public static void main(String[] args) {
 		try {
 			Class.forName("org.gjt.mm.mysql.Driver");
-			System.out.println("µå¶óÀÌ¹ö°¡ Á¤»ó ¼³Ä¡µÇ¾ú½À´Ï´Ù.");
+			System.out.println("ë“œë¼ì´ë²„ê°€ ì •ìƒ ì„¤ì¹˜ë˜ì—ˆìŠµë‹ˆë‹¤.");
 		} catch (ClassNotFoundException ee) {
-			System.err.println("µå¶óÀÌ¹ö ¾ø´ç~!");
+			System.err.println("ë“œë¼ì´ë²„ ì—†ë‹¹~!");
 		}
 	}
 }

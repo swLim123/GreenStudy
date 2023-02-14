@@ -1,64 +1,58 @@
+package ã„±ìë°”ì˜ˆì œì†ŒìŠ¤;
 import java.sql.*;
 
 public class Round27_Ex03 {
 	public static void main(String[] args) {
-		// 1. µå¶óÀÌºê¸¦ °Ë»ö (Readme.txt ÂüÁ¶)
-		// oracle => com.oracle.OracleDriver
-		// my-sql => org.gjt.mm.mysql.Driver
-		// odbc => jdbc.odbc.JdbcOdbcDriver : jdk1.2 ÀÌ»ó¿¡¼­´Â ±âº»¼³Ä¡
 		try {
 			Class.forName("org.gjt.mm.mysql.Driver");
-			System.out.println("µå¶óÀÌºê°¡ ÀÖ½À´Ï´ç~! ^_^v");
 		} catch (ClassNotFoundException ee) {
-			System.out.println("µå¶óÀÌºê ¾øÀ½!!");
+			System.out.println("ë“œë¼ì´ë¸Œ ì—†ìŒ!!");
 		}
-		// 2. Connection °´Ã¼»ı¼º (Readme.txt ÂüÁ¶)
-		// Connection conn = DriverManager.getConnection(
-		// "protocol:subprotocol:sid", "id", "pass");
-		// oracle => "jdbc:oracle:thin@124.61.53.124:1521/java"
-		// my-sql => "jdbc:mysql://124.61.53.124:3306/java"
-		// odbc => "jdbc:odbc:java"
 		Connection conn = null;
-		String url = "jdbc:mysql://124.61.53.124:3306/java";
+		String url = "jdbc:mysql://localhost:3306/member?useUnicode=true&characterEncoding=utf8";
 		String user = "root";// ID
-		String password = "12345678";// ºñ¹Ğ¹øÈ£
+		String password = "qwer";// ë¹„ë°€ë²ˆí˜¸
 		try {
 			conn = DriverManager.getConnection(url, user, password);
-			System.out.println("¿¬°áµÇ¾ú½À´Ï´Ù.");
+			System.out.println("ì—°ê²°ë˜ì—ˆìŠµë‹ˆë‹¤.");
 		} catch (SQLException ee) {
-			System.err.println("¿¬°á°´Ã¼ »ı¼º½ÇÆĞ!!");
+			System.err.println("ì—°ê²°ê°ì²´ ìƒì„±ì‹¤íŒ¨!!");
 		}
-		// 3. Query ½ÇÇà Å¬·¡½º »ı¼º
-		// Statement stmt = conn.createStatement();
-		// PrepareStatment pstmt = conn.prepareStatement(query);
-		String query = "select * from Round27_Ex02Table";
+		
+		
+		String query = "select * from tb_member2";
 		Statement stmt = null;
-		String pquery = "insert into Round27_Ex02Table values (null, ?)";
+		String pquery = "insert into tb_member2 values (null, ?, ?, ?, ?, ?)";
 		PreparedStatement pstmt = null;
 		try {
 			stmt = conn.createStatement();
 			pstmt = conn.prepareStatement(pquery);
-			pstmt.setString(1, "±èÁöÈÄ");
+			pstmt.setString(1, "id");
+			pstmt.setString(2, "pass");
+			pstmt.setString(3, "name");
+			pstmt.setString(4, "hp");
+			pstmt.setString(5, "sex");
 			pstmt.executeUpdate();
-			System.out.println("½ÇÇà¼º°ø");
+			System.out.println("ì‹¤í–‰ì„±ê³µ");
 		} catch (SQLException ee) {
-			System.err.println("Query ½ÇÇà Å¬·¡½º »ı¼º ¿¡·¯~!! : " + ee.toString());
+			System.err.println("Query ì‹¤í–‰ í´ë˜ìŠ¤ ìƒì„± ì—ëŸ¬~!! : " + ee.toString());
 		}
-		// 4. ResultSet °´Ã¼»ı¼º
+		// 4. ResultSet ê°ì²´ìƒì„±
 		// ResultSet rs = stmt.executeQuery(query);
 		// ResultSet rs = pstmt.executeQuery();
+		String query1 = "select * from tb_member2";
 		ResultSet rs = null;
 		try {
-			rs = stmt.executeQuery(query);
+			rs = stmt.executeQuery(query1);
 			while (rs.next()) {
-				int num = rs.getInt("num");
+				int num = rs.getInt("idx");
 				String name = rs.getString("name");
 				System.out.println(num + " : " + name);
 			}
 		} catch (SQLException ee) {
-			System.err.println("½ÇÇà°á°ú È¹µæ½ÇÆĞ!!");
+			System.err.println("ì‹¤í–‰ê²°ê³¼ íšë“ì‹¤íŒ¨!!");
 		}
-		// 5. Close ÀÛ¾÷
+		// 5. Close ì‘ì—…
 		try {
 			rs.close();
 			pstmt.close();
@@ -70,7 +64,7 @@ public class Round27_Ex03 {
 				conn = null;
 			}
 		} catch (SQLException ee) {
-			System.err.println("´İ±â ½ÇÆĞ~!!");
+			System.err.println("ë‹«ê¸° ì‹¤íŒ¨~!!");
 		}
 	}
 }
