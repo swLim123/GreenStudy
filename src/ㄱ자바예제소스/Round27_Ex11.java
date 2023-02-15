@@ -1,3 +1,4 @@
+package ã„±ìë°”ì˜ˆì œì†ŒìŠ¤;
 import java.sql.*;
 import java.io.*;
 
@@ -6,68 +7,74 @@ public class Round27_Ex11 {
 		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
 		Round27_Ex10 dao = new Round27_Ex10();
 		while (true) {
-			System.out.print("1.È¸¿ø°¡ÀÔ  2.·Î±×ÀÎ  3.Á¤º¸¼öÁ¤  4.Á¤º¸»èÁ¦  5.Á¾·á = ");
+			System.out.print("1.íšŒì›ê°€ì…\n2.ë¡œê·¸ì¸\n3.ì •ë³´ìˆ˜ì •\n4.ì •ë³´ì‚­ì œ\n5.íšŒì›ë¦¬ìŠ¤íŠ¸\n6.ì¢…ë£Œ = ");
 			int x = System.in.read() - 48;
 			System.in.read();
 			System.in.read();
 			if (x == 1) {
-				System.out.println("È¸¿ø°¡ÀÔ ÆäÀÌÁö ÀÔ´Ï´Ù.");
-				System.out.print("ÀÌ¸§ : ");
-				String name = in.readLine();
+				System.out.println("íšŒì›ê°€ì… í˜ì´ì§€ ì…ë‹ˆë‹¤.");
 				System.out.print("ID : ");
 				String id = in.readLine();
 				System.out.print("Password : ");
 				String pass = in.readLine();
-				System.out.print("e-mail : ");
-				String email = in.readLine();
-				boolean bool = dao.registerMember(name, id, pass, email);
+				System.out.print("Name : ");
+				String name = in.readLine();
+				System.out.print("Hp : ");
+				String hp = in.readLine();
+				System.out.print("Sex : ");
+				String sex = in.readLine();
+				boolean bool = dao.registerMember(id, pass, name, hp, sex);
 				if (bool)
-					System.out.println("È¸¿ø°¡ÀÔ¿¡ ¼º°øÇÏ¿´½À´Ï´Ù~!");
+					System.out.println("íšŒì›ê°€ì…ì— ì„±ê³µí•˜ì˜€ìŠµë‹ˆë‹¤~!");
 				else
-					System.out.println("È¸¿ø°¡ÀÔ¿¡ ½ÇÆĞÇÏ¿´½À´Ï´Ù!!");
+					System.out.println("íšŒì›ê°€ì…ì— ì‹¤íŒ¨í•˜ì˜€ìŠµë‹ˆë‹¤!!");
 				System.out.println();
 			} else if (x == 2) {
-				System.out.println("·Î±×ÀÎ ÆäÀÌÁö ÀÔ´Ï´Ù.");
+				System.out.println("ë¡œê·¸ì¸ í˜ì´ì§€ ì…ë‹ˆë‹¤.");
 				System.out.print("ID : ");
 				String id = in.readLine();
 				System.out.print("Password : ");
 				String pass = in.readLine();
 				boolean bool = dao.loginMember(id, pass);
 				if (bool)
-					System.out.println("·Î±×ÀÎ¿¡ ¼º°øÇÏ¿´½À´Ï´Ù~!");
+					System.out.println("ë¡œê·¸ì¸ì— ì„±ê³µí•˜ì˜€ìŠµë‹ˆë‹¤~!");
 				else
-					System.out.println("·Î±×ÀÎ¿¡ ½ÇÆĞÇÏ¿´½À´Ï´Ù");
+					System.out.println("ë¡œê·¸ì¸ì— ì‹¤íŒ¨í•˜ì˜€ìŠµë‹ˆë‹¤");
 				System.out.println();
 			} else if (x == 3) {
-				System.out.println("Á¤º¸¼öÁ¤ ÆäÀÌÁö ÀÔ´Ï´Ù.");
+				System.out.println("ì •ë³´ìˆ˜ì • í˜ì´ì§€ ì…ë‹ˆë‹¤.");
 				System.out.print("ID : ");
 				String id = in.readLine();
-				System.out.print("ÀÌ¸§ : ");
-				String name = in.readLine();
-				System.out.print("Password : ");
+				System.out.print("password : ");
 				String pass = in.readLine();
-				System.out.print("e-mail : ");
-				String email = in.readLine();
-				boolean bool = dao.editMember(id, name, pass, email);
+				System.out.print("name : ");
+				String name = in.readLine();
+				System.out.print("hp : ");
+				String hp = in.readLine();
+				System.out.print("sex : ");
+				String sex = in.readLine();
+				boolean bool = dao.editMember(id, pass, name, hp, sex);
 				if (bool)
-					System.out.println("È¸¿øÁ¤º¸¸¦ ¼öÁ¤ÇÏ¿´½À´Ï´Ù~!");
+					System.out.println("íšŒì›ì •ë³´ë¥¼ ìˆ˜ì •í•˜ì˜€ìŠµë‹ˆë‹¤~!");
 				else
-					System.out.println("È¸¿øÁ¤º¸¸¦ ¼öÁ¤ÇÏÁö ¸øÇÏ¿´½À´Ï´Ù!!");
+					System.out.println("íšŒì›ì •ë³´ë¥¼ ìˆ˜ì •í•˜ì§€ ëª»í•˜ì˜€ìŠµë‹ˆë‹¤!!");
 				System.out.println();
 			} else if (x == 4) {
-				System.out.println("Á¤º¸»èÁ¦ ÆäÀÌÁö ÀÔ´Ï´Ù.");
+				System.out.println("ì •ë³´ì‚­ì œ í˜ì´ì§€ ì…ë‹ˆë‹¤.");
 				System.out.print("ID : ");
 				String id = in.readLine();
 				boolean bool = dao.deleteMember(id);
 				if (bool)
-					System.out.println("È¸¿øÁ¤º¸°¡ »èÁ¦µÇ¾ú½À´Ï´Ù~!");
+					System.out.println("íšŒì›ì •ë³´ê°€ ì‚­ì œë˜ì—ˆìŠµë‹ˆë‹¤~!");
 				else
-					System.out.println("È¸¿øÁ¤º¸¸¦ »èÁ¦ÇÏÁö ¸øÇÏ¿´½À´Ï´Ù!!");
+					System.out.println("íšŒì›ì •ë³´ë¥¼ ì‚­ì œí•˜ì§€ ëª»í•˜ì˜€ìŠµë‹ˆë‹¤!!");
 				System.out.println();
 			} else if (x == 5) {
+				dao.ViewMember();
+			}else if (x == 6) {
 				System.exit(0);
 			} else {
-				System.err.println("Àß¸ø ÀÔ·Â!!");
+				System.err.println("ì˜ëª» ì…ë ¥!!");
 			}
 		}
 	}

@@ -1,3 +1,4 @@
+package ã„±ìë°”ì˜ˆì œì†ŒìŠ¤;
 import java.sql.*;
 
 public class Round27_Ex10 {
@@ -9,38 +10,39 @@ public class Round27_Ex10 {
 		} catch (ClassNotFoundException ee) {
 			return;
 		}
-		String url = "jdbc:mysql://124.61.53.124:3306/java";
+		String url = "jdbc:mysql://localhost:3306/member?useUnicode=true&characterEncoding=utf8";
 		String id = "root";
-		String pass = "12345678";
+		String pass = "qwer";
 		try {
 			dc = DriverManager.getConnection(url, id, pass);
 		} catch (SQLException ee) {
 		}
 	}
 
-	// È¸¿ø°¡ÀÔÀ» À§ÇØ¼­...
-	public boolean registerMember(String name, String id, String pass,
-			String email) {
-		String query = "insert into Round27_Ex10Table values (null, ?, ?, ?, ?)";
+	// íšŒì›ê°€ì…ì„ ìœ„í•´ì„œ...
+	public boolean registerMember(String id, String pass, String name,
+			String hp, String sex) {
+		String query = "insert into tb_member2 values (null, ?, ?, ?, ?, ?)";
 		
 		try {
 			PreparedStatement pstmt = dc.prepareStatement(query);
-			pstmt.setString(1, name);
-			pstmt.setString(2, id);
-			pstmt.setString(3, pass);
-			pstmt.setString(4, email);
+			pstmt.setString(1, id);
+			pstmt.setString(2, pass);
+			pstmt.setString(3, name);
+			pstmt.setString(4, hp);
+			pstmt.setString(5, sex);
 			pstmt.executeUpdate();
 			pstmt.close();
 		} catch (SQLException ee) {
-			System.err.println("È¸¿ø °¡ÀÔ ½ÇÆĞ!! : " + ee.toString());
+			System.err.println("íšŒì› ê°€ì… ì‹¤íŒ¨!! : " + ee.toString());
 			return false;
 		}
 		return true;
 	}
 
-	// loginÀ» À§ÇØ¼­...
+	// loginì„ ìœ„í•´ì„œ...
 	public boolean loginMember(String id, String pass) {
-		String query = "select * from Round27_Ex10Table where id = ? and pass = ?";
+		String query = "select * from tb_member2 where id = ? and pass = ?";
 		
 		try {
 			PreparedStatement pstmt = dc.prepareStatement(query);
@@ -55,33 +57,35 @@ public class Round27_Ex10 {
 			rs.close();
 			pstmt.close();
 		} catch (SQLException ee) {
-			System.err.println("login Ã³¸® ½ÇÆĞ!!");
+			System.err.println("login ì²˜ë¦¬ ì‹¤íŒ¨!!");
 		}
 		return true;
 	}
 
-	// È¸¿ø Á¤º¸¼öÁ¤À» À§ÇØ¼­...
-	public boolean editMember(String id, String name, String pass, String email) {
-		String query = "update Round27_Ex10Table set name = ?, pass = ?, email = ? where id = ?";
+	// íšŒì› ì •ë³´ìˆ˜ì •ì„ ìœ„í•´ì„œ...
+	public boolean editMember(String id, String pass, String name, String hp, String sex) {
+		String query = "update tb_member2 set id = ?, pass = ?, name = ?, hp = ?, sex = ? where id = ?";
 		
 		try {
 			PreparedStatement pstmt = dc.prepareStatement(query);
-			pstmt.setString(1, name);
+			pstmt.setString(1, id);
 			pstmt.setString(2, pass);
-			pstmt.setString(3, email);
-			pstmt.setString(4, id);
+			pstmt.setString(3, name);
+			pstmt.setString(4, hp);
+			pstmt.setString(5, sex);
+			pstmt.setString(6, id);
 			pstmt.executeUpdate();
 			pstmt.close();
 		} catch (SQLException ee) {
-			System.err.println("È¸¿ø Á¤º¸¼öÁ¤ ½ÇÆĞ!!");
+			System.err.println("íšŒì› ì •ë³´ìˆ˜ì • ì‹¤íŒ¨!!");
 			return false;
 		}
 		return true;
 	}
 
-	// È¸¿ø»èÁ¦¸¦ À§ÇØ¼­...
+	// íšŒì›ì‚­ì œë¥¼ ìœ„í•´ì„œ...
 	public boolean deleteMember(String id) {
-		String query = "delete from Round27_Ex10Table where id = ?";
+		String query = "delete from tb_member2 where id = ?";
 		
 		try {
 			PreparedStatement pstmt = dc.prepareStatement(query);
@@ -89,9 +93,29 @@ public class Round27_Ex10 {
 			pstmt.executeUpdate();
 			pstmt.close();
 		} catch (SQLException ee) {
-			System.err.println("È¸¿ø »èÁ¦ ½ÇÆĞ!!");
+			System.err.println("íšŒì› ì‚­ì œ ì‹¤íŒ¨!!");
 			return false;
 		}
 		return true;
 	}
-}
+		 void ViewMember()
+		{
+	
+			String query = "select * from tb_member2";
+			try {
+				ResultSet rs = null;
+				Statement stmt = dc.createStatement();
+				rs = stmt.executeQuery(query);
+				while (rs.next()) {
+					System.out.println(rs.getInt(1) + " : " + rs.getString(2) + " / " +
+					                   rs.getString(3) + " / " + rs.getString(4) + " / " + rs.getString(5));
+					}
+					rs.close();
+					stmt.close();
+					dc.close();
+				} catch (SQLException ee) {
+				System.err.println("error = " + ee.toString());
+			}
+		}
+	}
+
