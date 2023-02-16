@@ -6,8 +6,25 @@ import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 class MemberEdit extends Frame implements ItemListener, ActionListener{
+	//디비관련 클래스변수들...
+		Connection conn = null;
+		String url = "jdbc:mysql://localhost:3306/member?useUnicode=true&characterEncoding=utf8";	
+		String id = "root";
+		String pass = "qwer";
+		Statement stmt = null;
+		ResultSet rs = null;
+		PreparedStatement pstmt = null;
+		//////////////////////////////////////////////////////////
+		
+	
 	Label lbTitle = new Label("[[ 회원정보수정 ]]");
 	Label lbId =    new Label("아 이 디:");
 	Label lbPw =    new Label("패스워드:");
@@ -23,12 +40,13 @@ class MemberEdit extends Frame implements ItemListener, ActionListener{
 	Button btnCancel = new Button("취소");
 	
 	Choice chSex = new Choice();
-	
+	String sex="남자";
 	Font font25 = new Font("TimesRoman", Font.PLAIN, 25);
 	Font font15 = new Font("SansSerif", Font.BOLD, 15);
 	MemberEdit()
 	{
 		super("회원정보수정");
+		dbCon();
 		this.setSize(300,450);
 		this.init();//화면레이아웃구성메서드
 		start();
@@ -37,6 +55,8 @@ class MemberEdit extends Frame implements ItemListener, ActionListener{
 		
 	}	
 	void start() {
+		btnCancel.addActionListener(this);
+		btnEdit.addActionListener(this);
 		btnIdCheck.addActionListener(this);
 		chSex.addItemListener(this);
 		this.addWindowListener(new WindowAdapter() {
@@ -78,18 +98,112 @@ class MemberEdit extends Frame implements ItemListener, ActionListener{
 		this.add(btnCancel);	btnCancel.setFont(font15);	btnCancel.setBounds(110, 380, 80, 30);
 		
 	}
+	void dbCon()
+	{
+		////////////////////////////////////////
+		///데이타베이스접속..	
+		try {	Class.forName("org.gjt.mm.mysql.Driver");
+		} catch (ClassNotFoundException ee) {System.exit(0);}	
+
+		try {
+			conn = DriverManager.getConnection(url, id, pass);
+			stmt = conn.createStatement();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}		
+		////////////////////////////////////////////
+	}
+	void dbClose()
+	{		
+		// Close 작업
+		try {
+			rs.close();				
+			stmt.close();
+			pstmt.close();
+			if (conn != null) {
+				if (!conn.isClosed()) {
+					conn.close();
+				}
+				conn = null;
+			}
+		} catch (SQLException ee) {
+			System.err.println("닫기 실패~!!");
+		}
+	}
+	void idCheck(String findId)
+	{
+		//수정아이디 찾기
+		String query = "select * from tb_member2 where id='"+findId+"'";				
+		try {								
+			rs = stmt.executeQuery(query);
+			boolean idCheck = false;				
+			while (rs.next()) {			
+				idCheck =true;
+				dlgMsg("수정대상을 찾았습니다.");
+				tfPw.setText(rs.getString("pw"));
+				tfName.setText(rs.getString("name"));
+				tfHp.setText(rs.getString("hp"));
+				chSex.select(rs.getString("sex"));
+				sex = rs.getString("sex");
+				break;
+			}
+			if(idCheck==false)
+			{				
+				dlgMsg("수정대상이 없습니다.");				
+			}
+			
+		} catch (SQLException ee) {
+			System.err.println("실행결과 획득실패!!");
+		}
+		
+		
+	}
+	
 	@Override
 	public void itemStateChanged(ItemEvent e) {
-		System.out.println("select sex = "+ chSex.getSelectedIndex());
-		System.out.println("select sex = "+ chSex.getSelectedItem());
+		sex = chSex.getSelectedItem();		
 		
 	}
 	@Override
 	public void actionPerformed(ActionEvent e) {	
-		dlgMsg("대상이 없습니다.");
+		if(e.getSource() == btnIdCheck)  {
+			if(tfId.getText().equals("")){dlgMsg("아이디를 입력하시오.");return;	}			
+			idCheck(tfId.getText());
+		}
+		else if(e.getSource() == btnEdit) {
+			if(tfId.getText().equals("")){dlgMsg("아이디를 입력하시오.");return;	}
+			else if(tfPw.getText().equals("")){dlgMsg("패스워드를 입력하시오.");return;	}
+			else if(tfName.getText().equals("")){dlgMsg("이름을 입력하시오.");return;	}
+			else if(tfHp.getText().equals("")){dlgMsg("연락처를 입력하시오.");return;	}
+			
+			updateMember(tfId.getText(),tfPw.getText(),tfName.getText(),tfHp.getText(), sex);
+		}
+		else if(e.getSource() == btnCancel) {viewClose();}	
 
 		
 	}
+	// 회원 정보수정을 위해서...
+	void updateMember(String id, String pass, String name, String hp, String sex) {
+			String query = "update tb_member2 set id = ?, pw = ?, name = ?, hp = ?, sex = ? where id = ?";
+			
+			try {
+				PreparedStatement pstmt = conn.prepareStatement(query);
+				pstmt.setString(1, id);
+				pstmt.setString(2, pass);
+				pstmt.setString(3, name);
+				pstmt.setString(4, hp);
+				pstmt.setString(5, sex);
+				pstmt.setString(6, id);
+				pstmt.executeUpdate();
+				pstmt.close();
+				dlgMsg("수정완료!");
+			} catch (SQLException ee) {
+				System.err.println("회원 정보수정 실패!!");
+			
+			}
+			
+		}
 	void dlgMsg(String msg)
 	{
 		Dialog dlg = new Dialog(this, "대상찾기", true);

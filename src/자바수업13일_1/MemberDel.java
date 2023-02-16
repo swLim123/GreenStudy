@@ -6,8 +6,25 @@ import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 class MemberDel extends Frame implements ItemListener, ActionListener{
+	
+	//디비관련 클래스변수들...
+	Connection conn = null;
+	String url = "jdbc:mysql://localhost:3306/member?useUnicode=true&characterEncoding=utf8";	
+	String id = "root";
+	String pass = "qwer";
+	Statement stmt = null;
+	ResultSet rs = null;
+	PreparedStatement pstmt = null;
+	//////////////////////////////////////////////////////////
+	
 	Label lbTitle = new Label("[[ 회원정보삭제 ]]");
 	Label lbId =    new Label("아 이 디:");
 	
@@ -31,6 +48,7 @@ class MemberDel extends Frame implements ItemListener, ActionListener{
 	MemberDel()
 	{
 		super("회원정보삭제");
+		dbCon();//디비연동
 		this.setSize(300,450);
 		this.init();//화면레이아웃구성메서드
 		start();
@@ -39,8 +57,9 @@ class MemberDel extends Frame implements ItemListener, ActionListener{
 		
 	}	
 	void start() {
+		btnCancel.addActionListener(this);
 		btnIdCheck.addActionListener(this);
-		
+		btnDel.addActionListener(this);
 		this.addWindowListener(new WindowAdapter() {
 			public void windowClosing(WindowEvent e) {
 				viewClose();
@@ -79,15 +98,109 @@ class MemberDel extends Frame implements ItemListener, ActionListener{
 		this.add(btnCancel);	btnCancel.setFont(font15);	btnCancel.setBounds(110, 380, 80, 30);
 		
 	}
+	
+	
+	void idCheck()
+	{
+		//삭제아이디 찾기
+		String query = "select * from tb_member2";				
+		try {								
+			rs = stmt.executeQuery(query);
+			boolean idCheck = false;				
+			while (rs.next()) {					
+				
+				if(tfId.getText().equals(rs.getString("id")))
+				{
+					dlgMsg("삭제할 아이디를 찾았습니다.");	
+					idCheck = true;
+					//대상찾았으면 표시
+					lbName2.setText(rs.getString("name"));
+					lbHp2.setText(rs.getString("hp"));
+					lbSex2.setText(rs.getString("sex"));
+					
+					break;										
+				}
+			}
+			if(idCheck==false)
+			{
+				dlgMsg("삭제대상이 없습니다.");					
+			}
+			
+		} catch (SQLException ee) {
+			System.err.println("실행결과 획득실패!!");
+		}
+		
+		
+	}
+
+
+	void dbCon()
+	{
+		////////////////////////////////////////
+		///데이타베이스접속..	
+		try {	Class.forName("org.gjt.mm.mysql.Driver");
+		} catch (ClassNotFoundException ee) {System.exit(0);}	
+
+		try {
+			conn = DriverManager.getConnection(url, id, pass);
+			stmt = conn.createStatement();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}		
+		////////////////////////////////////////////
+	}
+	void dbClose()
+	{		
+		// Close 작업
+		try {
+			rs.close();				
+			stmt.close();
+			pstmt.close();
+			if (conn != null) {
+				if (!conn.isClosed()) {
+					conn.close();
+				}
+				conn = null;
+			}
+		} catch (SQLException ee) {
+			System.err.println("닫기 실패~!!");
+		}
+	}
+	
 	@Override
 	public void itemStateChanged(ItemEvent e) {		
 		
 	}
 	@Override
 	public void actionPerformed(ActionEvent e) {	
-		dlgMsg("대상이 없습니다.");
-
 		
+		if(e.getSource() == btnIdCheck)  {
+			if(tfId.getText().equals("")){dlgMsg("아이디를 입력하시오.");return;	}			
+			idCheck();
+		}
+		else if(e.getSource() == btnDel) {
+			if(tfId.getText().equals("")){dlgMsg("아이디를 입력하시오.");return;	}
+			deleteMember(tfId.getText());
+		}
+		else if(e.getSource() == btnCancel) {viewClose();}		
+	}
+	public void deleteMember(String id) {
+		String query = "delete from tb_member2 where id = ?";
+		
+		try {
+			PreparedStatement pstmt = conn.prepareStatement(query);
+			pstmt.setString(1, id);
+			pstmt.executeUpdate();
+			pstmt.close();
+			dlgMsg("회원삭제완료!");
+			tfId.setText("");
+			lbName2.setText("");
+			lbHp2.setText("");
+			lbSex2.setText("");
+		} catch (SQLException ee) {
+			System.err.println("회원 삭제 실패!!");			
+		}				
 	}
 	void dlgMsg(String msg)
 	{

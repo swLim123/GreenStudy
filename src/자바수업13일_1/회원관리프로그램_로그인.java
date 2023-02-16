@@ -151,20 +151,27 @@ class Login extends Frame implements FocusListener, ActionListener{
 				conn = DriverManager.getConnection(url, id, pass);
 				stmt = conn.createStatement();
 				rs = stmt.executeQuery(query);
-				while (rs.next()) {
-//					System.out.println(rs.getInt(1) + " : " + rs.getString(2)+ " / "+
-//							rs.getString(3)+ " / "+rs.getString(4));
-					
+				boolean idOk = false;
+				while (rs.next()) {				
 					if(inputId.equals(rs.getString(2)))
 					{
+						idOk=true;
 						if(inputPw.equals(rs.getString(3)))
-						{
+						{							
 							dlgMsg("로그인 성공!!");
 							MainView mv = new MainView();
 							this.setVisible(false);
 						}
+						else
+						{
+							dlgMsg("비번이 틀립니다.");break;
+						}
 					}
 					
+				}				
+				if(idOk == false)
+				{
+					dlgMsg("아이디를 확인하세요.");
 				}
 				rs.close();
 				stmt.close();

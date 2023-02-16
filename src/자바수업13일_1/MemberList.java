@@ -104,8 +104,8 @@ class MemberList extends Frame implements ItemListener, ActionListener{
 	}
 	@Override
 	public void actionPerformed(ActionEvent e) {		
-				System.exit(0);
-
+		 viewClose(); 
+		
 	}
 	
 	void dlgMsg(String msg)
