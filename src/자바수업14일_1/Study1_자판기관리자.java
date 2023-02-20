@@ -55,21 +55,23 @@ class Japangi_1 extends Frame implements ItemListener, ActionListener
 	Button btApply2 = new Button("적용");
 	Button btApply3 = new Button("적용");
 	Button btSales = new Button("매출현황");
+	Button btAddGoods = new Button("상품추가");
 	Choice chgoods1 = new Choice();
 	Choice chgoods2 = new Choice();
 	Font font25 = new Font("TimesRoman", Font.PLAIN, 25);
 	Font font15 = new Font("SansSerif", Font.BOLD, 15);
 	
 	//디비에서 데이타를 읽어들일 공간...
-		String goodsName[] = new String[3];
-		String goodsPrice[] = new String[3];
-		String goodsCount[] = new String[3];
-		String sellcount[] = new String[3];
-		String paycount[] = new String[3];
+		int MAX = 100;
+		String goodsName[] = new String[MAX];
+		String goodsPrice[] = new String[MAX];
+		String goodsCount[] = new String[MAX];
+		String sellcount[] = new String[MAX];
+		String paycount[] = new String[MAX];
 	Japangi_1()
 	{
 		super("상품관리자");
-		this.setSize(400, 450);
+		this.setSize(400, 500);
 		this.init();
 		dbCon();
 		dbDataLoad();
@@ -189,6 +191,10 @@ class Japangi_1 extends Frame implements ItemListener, ActionListener
 		btSales.setBounds(160, 380, 80, 35);
 		btSales.setFont(font15);
 		
+		this.add(btAddGoods);
+		btAddGoods.setBounds(160, 425, 80, 35);
+		btAddGoods.setFont(font15);
+		
 		this.add(chgoods1);
 		chgoods1.setBounds(50, 115, 70, 30);
 		chgoods1.add("상품1");
@@ -203,6 +209,7 @@ class Japangi_1 extends Frame implements ItemListener, ActionListener
 	}
 	public void start() 
 	{
+		btAddGoods.addActionListener(this);
 		chgoods1.addItemListener(this);
 		chgoods2.addItemListener(this);
 		btApply1.addActionListener(this);
@@ -286,6 +293,10 @@ class Japangi_1 extends Frame implements ItemListener, ActionListener
 		if (e.getSource() == btSales) 
 		{
 			dlgGoods();
+		}
+		if (e.getSource() == btAddGoods)
+		{
+			dlgAddGoods();
 		}
 	}
 	@Override
@@ -406,6 +417,66 @@ class Japangi_1 extends Frame implements ItemListener, ActionListener
 		});		
 		dlg.setLocation(480,250);
 		dlg.setSize(300, 200);
+		dlg.setVisible(true);
+	}
+	void dlgAddGoods()
+	{
+		Dialog dlg = new Dialog(this, "자판기알림!", true);
+		Label lbTitle = new Label("상품 등록하기");
+		Label lbGoodsName = new Label("삼품명:");
+		Label lbGoodsPrice = new Label();
+		Label lbGoodsCnt = new Label();
+		TextField tfGoodsName = new TextField();
+		TextField tfGoodsPrice = new TextField();
+		TextField tfGoodsCnt = new TextField();
+		Button bt = new Button("상품등록");
+		
+		dlg.setLayout(null);		
+		dlg.add(lbTitle);
+		lbTitle.setBounds(80, 50, 250, 30);
+		lbTitle.setFont(font25);
+		
+		dlg.add(lbGoodsName);
+		lbGoodsName.setBounds(50, 100, 60, 30);
+		lbGoodsName.setFont(font15);
+		
+		dlg.add(lbGoodsPrice);
+		lbGoodsPrice.setBounds(50, 130, 60, 30);
+		lbGoodsPrice.setFont(font15);
+		
+		dlg.add(lbGoodsCnt);
+		lbGoodsCnt.setBounds(50, 160, 60, 30);
+		lbGoodsCnt.setFont(font15);
+		
+		dlg.add(tfGoodsName);
+		tfGoodsName.setBounds(130, 100, 120, 30);
+		tfGoodsName.setFont(font15);
+		
+		dlg.add(tfGoodsPrice);
+		tfGoodsPrice.setBounds(130, 130, 120, 30);
+		tfGoodsPrice.setFont(font15);
+		
+		dlg.add(tfGoodsCnt);
+		tfGoodsCnt.setBounds(130, 160, 120, 30);
+		tfGoodsCnt.setFont(font15);
+		
+		dlg.add(bt);
+		bt.setBounds(90, 200, 120, 30);
+		bt.setFont(font15);
+		
+		bt.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dlgMsg("상품이 등록되었습니다!");
+				dlg.setVisible(false);
+			}
+		});
+		dlg.addWindowListener(new WindowAdapter() {
+			public void windowClosing(WindowEvent e) {
+				dlg.setVisible(false);
+			}
+		});		
+		dlg.setLocation(300,400);
+		dlg.setSize(300, 250);
 		dlg.setVisible(true);
 	}
 	void goodsNameUpdate(int idx, String name)
