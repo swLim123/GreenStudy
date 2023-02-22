@@ -29,13 +29,10 @@ class BookManagement extends Frame implements ActionListener{
 	Label lbTitle =    new Label("제목:");
 	Label lbWriter =    new Label("저자:");
 	Label lbPublishing =  new Label("출판사:");
-	Label lbDate =    new Label("등록일:");
 	TextField tfTitle = new TextField();
 	TextField tfWriter = new TextField();
 	TextField tfPublishing = new TextField();
-	TextField tfDate = new TextField();	
-	Button btnJoin = new Button("등록하기");
-	Button btncheck = new Button("중복확인");
+	Button btnAdd = new Button("등록하기");
 	
 	Font font25 = new Font("TimesRoman", Font.PLAIN, 25);
 	Font font15 = new Font("SansSerif", Font.BOLD, 15);
@@ -51,7 +48,7 @@ class BookManagement extends Frame implements ActionListener{
 		
 	}	
 	void start() {
-		btnJoin.addActionListener(this);		
+		btnAdd.addActionListener(this);		
 		this.addWindowListener(new WindowAdapter() {
 			public void windowClosing(WindowEvent e) {
 				viewClose();
@@ -76,11 +73,7 @@ class BookManagement extends Frame implements ActionListener{
 		this.add(lbPublishing);		lbPublishing.setFont(font15);	lbPublishing.setBounds(30, 200, 80, 30);		
 		this.add(tfPublishing);		tfPublishing.setFont(font15);	tfPublishing.setBounds(110, 200, 120, 30);
 		
-		this.add(lbDate);			lbDate.setFont(font15);		lbDate.setBounds(30, 250, 80, 30);		
-		this.add(tfDate);			tfDate.setFont(font15);		tfDate.setBounds(110, 250, 120, 30);
-		this.add(btnJoin);		  	btnJoin.setFont(font15);	btnJoin.setBounds(110, 340, 80, 30);
-		this.add(btncheck);		  	btncheck.setFont(font15);	btncheck.setBounds(200, 100, 80, 30);
-		
+		this.add(btnAdd);		  	btnAdd.setFont(font15);	   		btnAdd.setBounds(110, 340, 80, 30);	
 	}
 	void dbCon()
 	{
@@ -102,8 +95,6 @@ class BookManagement extends Frame implements ActionListener{
 	{		
 		// Close 작업
 		try {
-			rs.close();				
-			stmt.close();
 			pstmt.close();
 			if (conn != null) {
 				if (!conn.isClosed()) {
@@ -119,61 +110,47 @@ class BookManagement extends Frame implements ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent e) 
 	{	
-		
-	}
-	void idCheck()
-	{
-		//아이디중복체크...
-		String query = "select * from book";				
-		try {								
-			rs = stmt.executeQuery(query);
-			boolean idCheck = true;				
-			while (rs.next()) {					
-				
-				if(tfTitle.getText().equals(rs.getString("id")))
-				{
-					dlgMsg("도서명이 중복됩니다.");	
-					idCheck = false;
-					
-					break;										
-				}
+		if( e.getSource() == btnAdd) 
+		{
+			if(tfTitle.getText().equals("")){
+				dlgMsg("책제목을 입력하시오.");
+				return;
 			}
-			if(idCheck==true)
-			{
-				dlgMsg("사용가능한 아이디입니다.");	
-				tfTitle.setEnabled(false);				
+			else if(tfWriter.getText().equals("")){
+				dlgMsg("저자를 입력하시오.");
+				return;
 			}
-			
-		} catch (SQLException ee) {
-			System.err.println("실행결과 획득실패!!");
+			else if(tfPublishing.getText().equals("")){
+				dlgMsg("출판사를 입력하시오.");
+				return;
+			}				
+			//책등록 디비메서드
+			add();			
 		}
-		
-		
 	}
-	void join()
+	void add()
 	{	
-		String pquery = "insert into book values (null, ?, ?, ?, now())";	
+		String pquery = "insert into book values (null, ?, ?, ?, now(), ?)";	
 		try {
 			conn = DriverManager.getConnection(url, id, pass);
 			pstmt = conn.prepareStatement(pquery);
 			pstmt.setString(1, tfTitle.getText());
 			pstmt.setString(2, tfWriter.getText());
 			pstmt.setString(3, tfPublishing.getText());
-			pstmt.setString(4, tfDate.getText());			
+			pstmt.setString(4, "yes");			
 			pstmt.executeUpdate();
 			System.out.println("실행성공");
 		} catch (SQLException ee) {
 			System.err.println("Query 실행 클래스 생성 에러~!! : " + ee.toString());
 		}		
-		dbClose();//디비작업끝나서 닫기
-		
 		//회원가입처리후 사후제어처리...
-		tfDate.setEnabled(true);
 		tfWriter.setText("");
 		tfPublishing.setText("");
-		tfDate.setText("");
+		tfTitle.setText("");
 		
 		dlgMsg("도서 처리 완료!");
+		
+		dbClose();//디비작업끝나서 닫기
 			
 	}
 	void dlgMsg(String msg)

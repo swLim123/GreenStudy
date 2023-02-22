@@ -13,9 +13,9 @@ import java.awt.event.WindowEvent;
 class bookRentalMain extends Frame implements ActionListener{
 	Label lbTitle = new Label("메인화면");	
 	Button btnBookRental = new Button("도서대여");	
-	Button btnBookReturn = new Button("도서반남");
-	Button btnBookRenList = new Button("대여가능 책 리스트");
-	Button btnBookRetList = new Button("미반남 회원 리스트");
+	Button btnBookReturn = new Button("도서반납");
+	Button btnBookRenList = new Button("대여가능책 리스트");
+	Button btnBookRetList = new Button("미반남회원 리스트");
 	Button btnBookmng = new Button("책 관리");
 	Button btnClose = new Button("닫기");
 	
@@ -60,11 +60,11 @@ class bookRentalMain extends Frame implements ActionListener{
 		btnBookReturn.setFont(font15);
 		
 		this.add(btnBookRenList);//현재 클래스 내부에 생성해서 넣음...
-		btnBookRenList.setBounds(50, 200, 200, 40);
+		btnBookRenList.setBounds(80, 200, 140, 40);
 		btnBookRenList.setFont(font15);
 		
 		this.add(btnBookRetList);//현재 클래스 내부에 생성해서 넣음...
-		btnBookRetList.setBounds(50, 250, 200, 40);
+		btnBookRetList.setBounds(80, 250, 140, 40);
 		btnBookRetList.setFont(font15);
 		
 		this.add(btnBookmng);//현재 클래스 내부에 생성해서 넣음...
@@ -78,9 +78,9 @@ class bookRentalMain extends Frame implements ActionListener{
 	}
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		if(e.getSource()==btnBookRental)      {}
-		else if(e.getSource()==btnBookReturn) {}
-		else if(e.getSource()==btnBookRenList)  {}
+		if(e.getSource()==btnBookRental)      {BookRental br = new BookRental();}
+		else if(e.getSource()==btnBookReturn) {BookReturn bt = new BookReturn();}
+		else if(e.getSource()==btnBookRenList)  {BookRentalList rl = new BookRentalList();}
 		else if(e.getSource()==btnBookRetList) {}
 		else if(e.getSource()==btnBookmng) {bookManageMentMain bm = new bookManageMentMain();}
 		else if(e.getSource()==btnClose){ System.exit(0);}
