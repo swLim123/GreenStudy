@@ -40,9 +40,9 @@ class BookReturn_1 extends Frame implements ActionListener
 	Font font25 = new Font("TimesRoman", Font.PLAIN, 25);
 	Font font15 = new Font("SansSerif", Font.BOLD, 15);
 	
-	BookReturn()
+	BookReturn_1()
 	{
-		super("대여하기");
+		super("반납하기");
 		this.setSize(300,200);
 		this.init();//화면레이아웃구성메서드
 		dbCon();
@@ -88,16 +88,16 @@ class BookReturn_1 extends Frame implements ActionListener
 			}
 		});
 	}
-	void viewClose()
-	{
-		this.setVisible(false);
-	}
 	public void actionPerformed(ActionEvent e) 
 	{
 		if(e.getSource() == btReturn)
 		{
 			
 		}
+	}
+	void viewClose()
+	{
+		this.setVisible(false);
 	}
 	void dbCon()
 	{

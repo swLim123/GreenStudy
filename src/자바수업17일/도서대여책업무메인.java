@@ -81,7 +81,7 @@ class bookRentalMain extends Frame implements ActionListener{
 		if(e.getSource()==btnBookRental)      {BookRental br = new BookRental();}
 		else if(e.getSource()==btnBookReturn) {BookReturn bt = new BookReturn();}
 		else if(e.getSource()==btnBookRenList)  {BookRentalList rl = new BookRentalList();}
-		else if(e.getSource()==btnBookRetList) {}
+		else if(e.getSource()==btnBookRetList) {BookNReturnList bn = new BookNReturnList();}
 		else if(e.getSource()==btnBookmng) {bookManageMentMain bm = new bookManageMentMain();}
 		else if(e.getSource()==btnClose){ System.exit(0);}
 	}
