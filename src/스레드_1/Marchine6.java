@@ -1,4 +1,4 @@
-package 스레드보충;
+package 스레드_1;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -6,22 +6,22 @@ import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
-class Machine5 extends Frame implements ActionListener
+class Machine6 extends Frame implements ActionListener
 {
-	Label lbTitle = new Label("기계5 조작반");
-	public static Button btnM5On = new Button("전원ON");
-	public static Button btnM5Off = new Button("전원OFF");
+	Label lbTitle = new Label("기계6 조작반");
+	public static Button btnM6On = new Button("전원ON");
+	public static Button btnM6Off = new Button("전원OFF");
 	
 	Font font25 = new Font("TimesRoman", Font.PLAIN, 25);
 	Font font15 = new Font("SansSerif", Font.BOLD, 15);
 	
-	Machine5()
+	Machine6()
 	{
 		super("기계 가동 제어");
 		this.setSize(300,200);
 		this.init();
 		this.start();
-		this.setLocation(700,600);
+		this.setLocation(1000,600);
 		this.setVisible(true);
 	}
 	void init()
@@ -32,18 +32,18 @@ class Machine5 extends Frame implements ActionListener
 		lbTitle.setBounds(60, 40, 150, 30);
 		lbTitle.setFont(font25);
 		
-		this.add(btnM5On);
-		btnM5On.setBounds(50, 100, 70, 40);
-		btnM5On.setFont(font15);
+		this.add(btnM6On);
+		btnM6On.setBounds(50, 100, 70, 40);
+		btnM6On.setFont(font15);
 		
-		this.add(btnM5Off);
-		btnM5Off.setBounds(190, 100, 70, 40);
-		btnM5Off.setFont(font15);
+		this.add(btnM6Off);
+		btnM6Off.setBounds(190, 100, 70, 40);
+		btnM6Off.setFont(font15);
 	}
 	void start()
 	{
-		btnM5On.addActionListener(this);
-		btnM5Off.addActionListener(this);
+		btnM6On.addActionListener(this);
+		btnM6Off.addActionListener(this);
 		this.addWindowListener(new WindowAdapter() {
 			public void windowClosing(WindowEvent e) {
 				System.exit(0);

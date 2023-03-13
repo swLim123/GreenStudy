@@ -1,24 +1,11 @@
-package 스레드보충;
+package 스레드_1;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
-
-public class MachineMainView 
-{
-	public static void main(String[] args) 
-	{
-		Machine1 m1 = new Machine1();
-		Machine2 m2 = new Machine2();
-		Machine3 m3 = new Machine3();
-		Machine4 m4 = new Machine4();
-		Machine5 m5 = new Machine5();
-		Machine6 m6 = new Machine6();
-		MachineMain mm = new MachineMain();
-	}
-}
+	
 class MachineMain extends Frame implements Runnable, ActionListener
 {
 	int m1Count = 0;
