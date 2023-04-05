@@ -157,8 +157,23 @@ class Login extends Frame implements FocusListener, ActionListener{
 					{
 						idOk=true;
 						if(inputPw.equals(rs.getString(3)))
-						{							
-							dlgMsg("로그인 성공!!");
+						{	
+							//로그인 성공시 디비 데이타 static 저장 회원
+							ServerData.id = rs.getString("id");
+							ServerData.pw = rs.getString("pw");
+							ServerData.name = rs.getString("name");
+							ServerData.grade = rs.getString("grade");
+							ServerData.part = rs.getString("part");
+							
+							//로그인 성공시 디비 데이타 static 저장 기계초기값
+							productDataLoad();
+						
+							for(int i=0; i<6; i++)
+							{
+								System.out.println("ServerData.productName["+i+"]"+ServerData.productName[i]);
+							}
+							
+							dlgMsg("로그인 성공!!");							
 							//메인프로그램 시작
 							MainProgram mp = new MainProgram();		
 							Thread th = new Thread(mp);
@@ -183,6 +198,7 @@ class Login extends Frame implements FocusListener, ActionListener{
 							th6.start();
 							////////////////////////////////
 							this.setVisible(false);
+							break;
 						}
 						else
 						{
@@ -207,6 +223,50 @@ class Login extends Frame implements FocusListener, ActionListener{
 		else if(e.getSource() == btnJoin)
 		{
 			MemberJoin mj = new MemberJoin();
+		}
+		
+	}
+	
+	void productDataLoad()
+	{
+	////////////////////////////////////////
+	///데이타베이스접속..
+
+		
+		String query = "select * from product";
+		try {
+			Class.forName("org.gjt.mm.mysql.Driver");
+		} catch (ClassNotFoundException ee) {
+			System.exit(0);
+		}
+		Connection conn = null;
+		//접속 주소 : 3306/디비명
+		String url = "jdbc:mysql://localhost:3306/factory?useUnicode=true&characterEncoding=utf8";
+		//String url = "jdbc:mysql://127.0.0.1:3306/java";
+		String id = "root";
+		String pass = "qwer";
+		Statement stmt = null;
+		ResultSet rs = null;
+		
+		try {
+			conn = DriverManager.getConnection(url, id, pass);
+			stmt = conn.createStatement();
+			rs = stmt.executeQuery(query);
+			String result="";
+			int num = 0;
+		while (rs.next()) {			
+			ServerData.productName[num] = rs.getString("name");
+			ServerData.productCnt[num] = rs.getInt("cnt");
+			ServerData.productCntTot[num] = rs.getInt("cnt_tot");
+			ServerData.productSecond[num] = rs.getInt("second");
+			ServerData.productMemberName[num] = rs.getString("member_name");
+			num++;		
+		}
+		rs.close();
+		stmt.close();
+		conn.close();
+		} catch (SQLException ee) {
+		System.err.println("error = " + ee.toString());
 		}
 		
 	}

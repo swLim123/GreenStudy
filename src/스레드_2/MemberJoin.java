@@ -24,7 +24,7 @@ class MemberJoin extends Frame implements ItemListener, ActionListener{
 	PreparedStatement pstmt = null;
 	/////////////////////////////////////////////////////////////////////////
 	
-	Label lbTitle = new Label("[[    회원 가입    ]]");
+	Label lbTitle = new Label("회원 가입");
 	Label lbName =  new Label("사 원 명:");
 	Label lbId =    new Label("아 이 디:");
 	Label lbPw =    new Label("패스워드:");		

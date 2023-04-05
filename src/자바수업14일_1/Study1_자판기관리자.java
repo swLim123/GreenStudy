@@ -43,7 +43,7 @@ class Japangi_1 extends Frame implements ItemListener, ActionListener
 	Label goodsName_1 = new Label("이름:");
 	TextField goodsName_2 = new TextField();
 	Label goodsPrice_1 = new Label("가격:");
-	TextField goodsPrice_2 = new TextField();
+	TextField tfgoodsPrice = new TextField();
 	Label goodsInputMng = new Label("입고관리");
 	Label goodsName2_1 = new Label("상품명:");
 	Label goodsName2_2 = new Label(" -  -  - ");
@@ -143,9 +143,9 @@ class Japangi_1 extends Frame implements ItemListener, ActionListener
 		goodsPrice_1.setBounds(150, 140, 40, 30);
 		goodsPrice_1.setFont(font15);
 		
-		this.add(goodsPrice_2);
-		goodsPrice_2.setBounds(200, 140, 90, 30);
-		goodsPrice_2.setFont(font15);
+		this.add(tfgoodsPrice);
+		tfgoodsPrice.setBounds(200, 140, 90, 30);
+		tfgoodsPrice.setFont(font15);
 		
 		this.add(goodsInputMng);
 		goodsInputMng.setBounds(50, 230, 100, 30);
@@ -252,19 +252,19 @@ class Japangi_1 extends Frame implements ItemListener, ActionListener
 		{
 			if(chgoods1.getSelectedItem().equals("상품1"))
 			{
-				goodsPrice[0] = goodsPrice_2.getText();
+				goodsPrice[0] = tfgoodsPrice.getText();
 				dlgMsg("상품가격이 변경 되었습니다.");
 				goodsPriceUpdate(1,goodsPrice[0]);
 			}
 			else if(chgoods1.getSelectedItem().equals("상품2"))
 			{
-				goodsPrice[2] = goodsPrice_2.getText();
+				goodsPrice[1] = tfgoodsPrice.getText();
 				dlgMsg("상품가격이 변경 되었습니다.");
 				goodsPriceUpdate(2,goodsPrice[1]);
 			}
 			else if(chgoods1.getSelectedItem().equals("상품3"))
 			{
-				goodsPrice[3] = goodsPrice_2.getText();
+				goodsPrice[2] = tfgoodsPrice.getText();
 				dlgMsg("상품가격이 변경 되었습니다.");
 				goodsPriceUpdate(3,goodsPrice[2]);
 			}
@@ -307,19 +307,19 @@ class Japangi_1 extends Frame implements ItemListener, ActionListener
 			if(chgoods1.getSelectedItem().equals("상품1"))
 			{
 				goodsName_2.setText(goodsName[0]);
-				goodsPrice_2.setText(goodsPrice[0]);
+				tfgoodsPrice.setText(goodsPrice[0]);
 				return;
 			}
 			else if(chgoods1.getSelectedItem().equals("상품2"))
 			{
 				goodsName_2.setText(goodsName[1]);
-				goodsPrice_2.setText(goodsPrice[1]);
+				tfgoodsPrice.setText(goodsPrice[1]);
 				return;
 			}
 			else if(chgoods1.getSelectedItem().equals("상품3"))
 			{
 				goodsName_2.setText(goodsName[2]);
-				goodsPrice_2.setText(goodsPrice[2]);
+				tfgoodsPrice.setText(goodsPrice[2]);
 				return;
 			}
 		}
@@ -498,7 +498,7 @@ class Japangi_1 extends Frame implements ItemListener, ActionListener
 	}
 	void goodsPriceUpdate(int idx, String Price)
 	{
-		String query = "update japangi set name = ? where idx = ?";
+		String query = "update japangi set price = ? where idx = ?";
 		
 		try {
 			PreparedStatement pstmt = conn.prepareStatement(query);

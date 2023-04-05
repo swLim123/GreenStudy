@@ -12,9 +12,26 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 
 class SubCom4 extends Frame implements ActionListener,Runnable{
+	
+	//디비관련 클래스변수들...
+	Connection conn = null;
+	String url = "jdbc:mysql://localhost:3306/factory?useUnicode=true&characterEncoding=utf8";	
+	String id = "root";
+	String pass = "qwer";
+	Statement stmt = null;
+	ResultSet rs = null;
+	PreparedStatement pstmt = null;
+	//////////////////////////////////////////////////////////
+	
 	private Dimension dimen;
 	int fullSizeWidth, fullSizeHeight;
 	int x,y;
@@ -38,6 +55,7 @@ class SubCom4 extends Frame implements ActionListener,Runnable{
 		y = 0;
 		this.setSize(fullSizeWidth,fullSizeHeight);
 		this.init();
+		control();
 		this.start();
 		this.setLocation(x, y);
 		this.setVisible(true);
@@ -73,6 +91,21 @@ class SubCom4 extends Frame implements ActionListener,Runnable{
 	
 		
 	}
+	void control()
+	{
+		btnCom1.setEnabled(false);
+		btnCom2.setEnabled(false);
+		
+		//관리자일경우에만 보임		
+		if(ServerData.grade.equals("반장") ||
+		   ServerData.grade.equals("공장장") ||	
+		   ServerData.part.equals("기계4") ||
+		   ServerData.part.equals("관리자")	)
+		{			
+			btnCom1.setEnabled(true);
+			btnCom2.setEnabled(true);				
+		}			
+	}
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource() == btnCom1)      {
@@ -96,12 +129,42 @@ class SubCom4 extends Frame implements ActionListener,Runnable{
 			if(com4Start==true)
 			{
 				com4Cnt++;
+				update(ServerData.productName[3],com4Cnt);
 				try {Thread.sleep(2000);MainProgram.lbCom4Cnt.setText("기계4출하량:"+com4Cnt+"개");
 				} catch (InterruptedException e) {}
 			}
 		}
 		
 	}
+	// 수량변경 업데이트
+			void update(String name, int cnt) {
+					////////////////////////////////////////
+					///데이타베이스접속..	
+					try {	Class.forName("org.gjt.mm.mysql.Driver");
+					} catch (ClassNotFoundException ee) {System.exit(0);}	
+		
+					try {
+						conn = DriverManager.getConnection(url, id, pass);
+						stmt = conn.createStatement();
+					} catch (SQLException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}		
+					////////////////////////////////////////////
+				
+					String query = "update product set cnt_tot =? where name = ?";
+					
+					try {
+						PreparedStatement pstmt = conn.prepareStatement(query);
+						pstmt.setInt(1, cnt);					
+						pstmt.setString(2, name);					
+						pstmt.executeUpdate();
+						pstmt.close();					
+					} catch (SQLException ee) {
+					
+					}
+					
+				}
 
 }
 

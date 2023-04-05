@@ -55,9 +55,9 @@ class Japangi extends Frame implements ActionListener{
 	Font font15 = new Font("SansSerif", Font.BOLD, 15);
 	Font font10 = new Font("SansSerif", Font.BOLD, 10);
 	Label lbTitle =new Label("자판기프로그램");
-	Label lbGoods1 =new Label("아메리카노(0잔남음)",Label.CENTER);
-	Label lbGoods2 =new Label("라떼(0잔남음)",Label.CENTER);
-	Label lbGoods3 =new Label("딸기요거트(0잔남음)",Label.CENTER);
+	Label lbGoods1 =new Label("코카콜라(0잔남음)",Label.CENTER);
+	Label lbGoods2 =new Label("펩시(0잔남음)",Label.CENTER);
+	Label lbGoods3 =new Label("스프라이트(0잔남음)",Label.CENTER);
 	Label lbGoods1Price =new Label("가격: 0원",Label.CENTER);
 	Label lbGoods2Price =new Label("가격: 0원",Label.CENTER);
 	Label lbGoods3Price =new Label("가격: 0원",Label.CENTER);
@@ -208,12 +208,12 @@ class Japangi extends Frame implements ActionListener{
 		 btnCancel.setFont(font15);
 		 btnRefresh.setFont(font15);
 		 
-		 imgGoods1 = Toolkit.getDefaultToolkit().getImage("img/goods1.png");
-		 imgGoods2 = Toolkit.getDefaultToolkit().getImage("img/goods2.png");
-		 imgGoods3 = Toolkit.getDefaultToolkit().getImage("img/goods3.png");
-		 imgIng1 = Toolkit.getDefaultToolkit().getImage("img/ing.gif");
-		 imgIng2 = Toolkit.getDefaultToolkit().getImage("img/ing.gif");
-		 imgIng3 = Toolkit.getDefaultToolkit().getImage("img/ing.gif");
+		 imgGoods1 = Toolkit.getDefaultToolkit().getImage("image/코카콜라.png");
+		 imgGoods2 = Toolkit.getDefaultToolkit().getImage("image/펩시.png");
+		 imgGoods3 = Toolkit.getDefaultToolkit().getImage("image/스프라이트.png");
+		 imgIng1 = Toolkit.getDefaultToolkit().getImage("image/모래시계.png");
+		 imgIng2 = Toolkit.getDefaultToolkit().getImage("image/모래시계.png");
+		 imgIng3 = Toolkit.getDefaultToolkit().getImage("image/모래시계.png");
 		 
 		 //배치
 		 lbTitle.setBounds(120, 30, 200, 30);  btnRefresh.setBounds(350, 30, 70, 30);
@@ -391,7 +391,7 @@ class Japangi extends Frame implements ActionListener{
 		 }
 		 else if ( e.getSource()==btnSel1 ) {
 			//선택상품 이미지변경
-			 imgIng1 = Toolkit.getDefaultToolkit().getImage("img/ing.gif");
+			 imgIng1 = Toolkit.getDefaultToolkit().getImage("image/모래시계.png");
 			 this.repaint();
 			 
 				//상품선택유지변수
@@ -402,7 +402,7 @@ class Japangi extends Frame implements ActionListener{
 		 }
 		 else if ( e.getSource()==btnSel2 ) {
 				//선택상품 이미지변경
-			 imgIng2 = Toolkit.getDefaultToolkit().getImage("img/ing.gif");
+			 imgIng2 = Toolkit.getDefaultToolkit().getImage("image/모래시계.png");
 			 this.repaint();
 			 
 			 goods2Sel=false;
@@ -412,7 +412,7 @@ class Japangi extends Frame implements ActionListener{
 		 }
 		 else if ( e.getSource()==btnSel3 ) {
 				//선택상품 이미지변경
-			 imgIng3 = Toolkit.getDefaultToolkit().getImage("img/ing.gif");
+			 imgIng3 = Toolkit.getDefaultToolkit().getImage("image/모래시계.png");
 			 this.repaint();
 			 
 			 goods3Sel=false;
@@ -445,9 +445,9 @@ class Japangi extends Frame implements ActionListener{
 			 lbSelPrice3.setText(0+"원");
 			 lbCoin3.setText(jan+"원");
 			 
-			 imgIng1 = Toolkit.getDefaultToolkit().getImage("img/ing.gif");
-			 imgIng2 = Toolkit.getDefaultToolkit().getImage("img/ing.gif");
-			 imgIng3 = Toolkit.getDefaultToolkit().getImage("img/ing.gif");
+			 imgIng1 = Toolkit.getDefaultToolkit().getImage("image/모래시계.png");
+			 imgIng2 = Toolkit.getDefaultToolkit().getImage("image/모래시계.png");
+			 imgIng3 = Toolkit.getDefaultToolkit().getImage("image/모래시계.png");
  
 			 //상품수량 차감
 			 if(goods1Sel==true) {
